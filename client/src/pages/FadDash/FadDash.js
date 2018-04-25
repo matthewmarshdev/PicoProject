@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import SplashHeader from "../../components/SplashHeader";
-import LoginForm from "../../components/LoginForm";
+import FadForm from "../../components/FadForm";
 import Logo from "../../components/Logo";
 
 
-class Login extends Component {
+class FadDash extends Component {
   render() {
     return (
       <div>
         <SplashHeader />
         <Logo />
-        <LoginForm />
+        <FadForm />
         
       </div>
     );
   }
 }
 
-export default Login;
+export default FadDash;
