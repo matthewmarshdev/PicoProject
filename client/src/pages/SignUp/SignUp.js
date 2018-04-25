@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import SplashHeader from "../../components/SplashHeader";
-import LoginForm from "../../components/LoginForm";
+import SignUpForm from "../../components/SignUpForm";
 import Logo from "../../components/Logo";
 
 
-class Login extends Component {
+class SignUp extends Component {
   render() {
     return (
       <div>
         <SplashHeader />
         <Logo />
-        <LoginForm />
+        <SignUpForm />
         
       </div>
     );
   }
 }
 
-export default Login;
+export default SignUp;
