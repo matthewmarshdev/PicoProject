@@ -38,6 +38,10 @@ let dogSchema = new Schema({
   hasVacc: {
     type: Boolean,
     required: true
+  },
+  story: {
+    type: String,
+    required: true
   }
 });
 const Dog = mongoose.model("Dog", dogSchema);
