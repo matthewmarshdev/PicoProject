@@ -1,5 +1,8 @@
 const router = require("express").Router();
-const companyController = require("../../controllers/companyController")
-router.use( '/user', companyController.createUser )
+const userController = require("../../controllers/userController");
+const dogsController = require("../../controllers/dogsController");
+
+router.use( '/user', userController.createUser )
+
 module.exports = router;
 
