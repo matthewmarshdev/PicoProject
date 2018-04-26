@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const SchemaTwo = mongoose.SchemaTwo;
+const Schema = mongoose.Schema;
 
 let userSchema = new Schema({
-  Type: { type: String, required: true },
-  Name: { type: String, required: true },
-  Company: { type: String, required: true },
-  Email: { type: String, required: true },
-  Phone: { type: Number, required: true },
-  Password: { type: String, required: true },
+  type: { type: String, required: false },
+  name: { type: String, required: true },
+  company: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: Number, required: true },
+  password: { type: String, required: true },
 });
 
 const User = mongoose.model("User", userSchema);
