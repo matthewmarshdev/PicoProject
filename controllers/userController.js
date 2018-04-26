@@ -4,9 +4,11 @@ const db= require ('../models');
 
 module.exports= {
     createUser: function(req, res){
-        const dataBaseObject = {
-            name: req.body.firstName
-        } 
+        
+        //const dataBaseObject = {
+          //  name: req.body.firstName
+        //} 
+
         db.users.create(
             req.body
         )
