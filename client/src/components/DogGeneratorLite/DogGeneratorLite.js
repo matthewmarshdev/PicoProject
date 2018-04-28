@@ -14,7 +14,12 @@ class DogGeneratorLite extends Component {
     address2: "",
     state: "",
     city: "",
-    zip: ""
+    zip: "",
+    temperment: "",
+    isChopped: "",
+    isChipped: "",
+    hasVacc: "",
+    story: ""
   };
 
   handleInputChange = event => {
@@ -36,11 +41,13 @@ class DogGeneratorLite extends Component {
 
   //name, size, breed, weight, sex, pickupDate
 
+  //temperment, isChopped, isChipped, hasVacc, story
+
   render() {
     return (
       <div className="row formRow">
         <form className="col s8">
-        <div className="row">
+          <div className="row">
             <div className="input-field col s6">
               <input
                 id="name"
@@ -130,6 +137,19 @@ class DogGeneratorLite extends Component {
             </div>
             <div className="input-field col s4">
               <input
+                id="temperment"
+                name="temperment"
+                value={this.state.temperment}
+                onChange={this.handleInputChange}
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="Sex">Sex</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s8">
+              <input
                 id="pickupDate"
                 name="pickupDate"
                 value={this.state.pickupDate}
@@ -138,6 +158,101 @@ class DogGeneratorLite extends Component {
                 className="validate"
               />
               <label htmlFor="pickupDate">Date Available for Pickup</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s4">
+              <p>
+                <label>
+                  <input
+                    name="isChopped"
+                    value="true"
+                    checked={this.state.isChopped === "true"}
+                    onChange={this.handleInputChange}
+                    defaultChecked="true"
+                    type="radio"
+                  />
+                  <span>Neutered</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input
+                    name="isChopped"
+                    value="false"
+                    checked={this.state.isChopped === "false"}
+                    onChange={this.handleInputChange}
+                    type="radio"
+                  />
+                  <span>Not Neutered</span>
+                </label>
+              </p>
+            </div>
+            <div className="input-field col s4">
+              <p>
+                <label>
+                  <input
+                    name="isChipped"
+                    value="true"
+                    checked={this.state.isChipped === "true"}
+                    onChange={this.handleInputChange}
+                    defaultChecked="true"
+                    type="radio"
+                  />
+                  <span>Has Chip</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input
+                    name="isChipped"
+                    value="false"
+                    checked={this.state.isChipped === "false"}
+                    onChange={this.handleInputChange}
+                    type="radio"
+                  />
+                  <span>Has No Chip</span>
+                </label>
+              </p>
+            </div>
+            <div className="input-field col s4">
+              <p>
+                <label>
+                  <input
+                    name="hasVacc"
+                    value="true"
+                    checked={this.state.hasVacc === "true"}
+                    onChange={this.handleInputChange}
+                    defaultChecked="true"
+                    type="radio"
+                  />
+                  <span>Vaccinated</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input
+                    name="hasVacc"
+                    value="false"
+                    checked={this.state.hasVacc === "false"}
+                    onChange={this.handleInputChange}
+                    type="radio"
+                  />
+                  <span>Not Vaccinated</span>
+                </label>
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s8">
+              <input
+                id="story"
+                name="story"
+                value={this.state.story}
+                onChange={this.handleInputChange}
+                type="text"
+                className="validate"
+              />
             </div>
           </div>
           <button
