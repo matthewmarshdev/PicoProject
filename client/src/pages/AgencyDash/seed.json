@@ -1,0 +1,64 @@
+[
+    {
+      "id": 1,
+      "name": "Pico",
+      "size": "Small",
+      "breed": "Dachshund",
+      "weight": "20",
+      "temperment": "Friendly",
+      "sex": "Male",
+      "status": "adopted",
+      "story": "Lorem"
+
+    },
+    {
+      "id": 2,
+      "name": "Barry",
+      "size": "Small",
+      "breed": "Cairn Terrier",
+      "weight": "22",
+      "status": "incomplete",
+      "temperment": "Friendly",
+      "sex": "Male",
+      "story": "Lorem"
+
+    },
+    {
+      "id": 3,
+      "name": "Moose",
+      "size": "Medium",
+      "breed": "American Bully",
+      "weight": "65",
+      "status": "complete",
+      "temperment": "Aggressive",
+      "sex": "Male",
+      "story": "Lorem"
+
+    },
+  
+    {
+      "id": 4,
+      "name": "Lucielle",
+      "size": "Large",
+      "breed": "Alaskian Eskimo",
+      "weight": "140",
+      "status": "fostered",
+      "temperment": "Neutral",
+      "sex": "Female",
+      "story": "Lorem"
+
+    },
+  
+    {
+      "id": 5,
+      "name": "Geraldine",
+      "size": "Large",
+      "breed": "Alaskian Eskimo",
+      "weight": "140",
+      "status": "transferred",
+      "temperment": "Neutral",
+      "sex": "Female",
+      "story": "Lorem"
+
+    }
+  ]

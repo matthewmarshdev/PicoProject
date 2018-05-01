@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import SplashHeader from "../../components/SplashHeader";
 import FadForm from "../../components/FadForm";
 import FadNav from "../../components/FadNav";
-import Logo from "../../components/Logo";
 import DogCard from "../../components/DogCard";
 
 class FadDash extends Component {

@@ -43,6 +43,8 @@ class DogGeneratorLite extends Component {
 
   //temperment, isChopped, isChipped, hasVacc, story
 
+  //TODO: create field for dog image url
+
   render() {
     return (
       <div className="row formRow">
