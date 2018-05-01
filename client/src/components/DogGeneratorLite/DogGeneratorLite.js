@@ -34,7 +34,7 @@ class DogGeneratorLite extends Component {
     event.preventDefault();
     console.log(this.state);
     // the below api createDog method doesn't exist yet
-    API.createDog(this.state)
+    API.addDog(this.state)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
