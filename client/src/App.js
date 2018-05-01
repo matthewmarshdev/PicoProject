@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Splash from "./pages/Splash";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import AgencyDash from "./pages/AgencyDash";
+import FadDash from "./pages/FadDash";
+import NoMatch from "./pages/NoMatch";
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">The Pico Project</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/agencydash" component={AgencyDash} />
+        <Route exact path="/faddash" component={FadDash} />
+        <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>
     );
   }
 }

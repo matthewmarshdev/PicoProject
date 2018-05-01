@@ -1,0 +1,21 @@
+.navBackground{
+    text-align: center;
+    background: black;
+    height: 100%;
+}
+
+.navButton{
+    border-width: 2px; 
+    border-color: white; 
+    border-style: solid;
+    background: black;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 75%;
+}
+
+.navButton:focus{
+    background: #404040;
+}
