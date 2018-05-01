@@ -5,57 +5,73 @@ mongoose.Promise = global.Promise;
 // This file empties the Books collection and inserts the books below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactdoglist",
-  {
-    useMongoClient: true
-  }
+  process.env.MONGODB_URI || "mongodb://localhost/reactdoglist"
 );
 
 const dogSeed = [
   {
-    Name: "Pico",
-    Size: "Small",
-    Breed: "Dachshund",
-    Weight: 20,
-    Temperment: "Friendly",
-    Sex: "Male",
-    Story: "Lorem",
+    name: "Pico",
+    size: "Small",
+    breed: "Dachshund",
+    weight: "20",
+    temperment: "Friendly",
+    sex: "Male",
+    status: "adopted",
+    story: "Lorem",
     pickupDate: new Date(Date.now())
   },
   {
-    Name: "Barry",
-    Size: "Small",
-    Breed: "Cairn Terrier",
-    Weight: 22,
-    Temperment: "Friendly",
-    Sex: "Male",
-    Story: "Lorem",
+    name: "Barry",
+    size: "Small",
+    breed: "Cairn Terrier",
+    weight: "22",
+    status: "incomplete",
+    temperment: "Friendly",
+    sex: "Male",
+    story: "Lorem",
     pickupDate: new Date(Date.now())
   },
   {
-    Name: "Moose",
-    Size: "Medium",
-    Breed: "American Bully",
-    Weight: 65,
-    Temperment: "Aggressive",
-    Sex: "Male",
-    Story: "Lorem",
+    name: "Moose",
+    size: "Medium",
+    breed: "American Bully",
+    weight: "65",
+    status: "complete",
+    temperment: "Aggressive",
+    sex: "Male",
+    story: "Lorem",
     pickupDate: new Date(Date.now())
   },
+
   {
-    Name: "Geraldine",
-    Size: "Large",
-    Breed: "Alaskian Eskimo",
-    Weight: 140,
-    Temperment: "Neutral",
-    Sex: "Female",
-    Story: "Lorem",
+    name: "Lucielle",
+    size: "Large",
+    breed: "Alaskian Eskimo",
+    weight: "140",
+    status:"fostered",
+    temperment: "Neutral",
+    sex: "Female",
+    story: "Lorem",
+    pickupDate: new Date(Date.now())
+  },
+
+
+  {
+    name: "Geraldine",
+    size: "Large",
+    breed: "Alaskian Eskimo",
+    weight: "140",
+    status:"transferred",
+    temperment: "Neutral",
+    sex: "Female",
+    story: "Lorem",
     pickupDate: new Date(Date.now())
   }
 ];
 
-db.Dog.remove({})
-  .then(() => db.Dog.collection.insertMany(dogSeed))
+
+db.dog.remove({})
+  .then(() => db.dog.collection.insertMany(dogSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
