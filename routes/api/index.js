@@ -5,9 +5,12 @@ const userController = require("../../controllers/userController");
 // const dogsController = require("../../controllers/dogsController");
 
 
-router.use("/books", dogRoutes);
+router.use("/dog", dogRoutes);
 // router.use('/adddog', dogsController.addDog);
-router.use( '/user', userController.createUser );
 // router.use('/getdogs', dogsController.getDogs);
+
+router.use( '/user', userController.createUser );
+router.post("/signup", userController.createUser);
+
 
 module.exports = router;
