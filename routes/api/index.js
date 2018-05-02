@@ -1,8 +1,16 @@
 const router = require("express").Router();
-const userController = require("../../controllers/userController");
-const dogsController = require("../../controllers/dogsController");
+const dogRoutes = require("./dogs");
 
-router.use( '/user', userController.createUser )
+const userController = require("../../controllers/userController");
+// const dogsController = require("../../controllers/dogsController");
+
+
+router.use("/dog", dogRoutes);
+// router.use('/adddog', dogsController.addDog);
+// router.use('/getdogs', dogsController.getDogs);
+
+router.use( '/user', userController.createUser );
+router.post("/signup", userController.createUser);
+
 
 module.exports = router;
-

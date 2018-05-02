@@ -2,48 +2,54 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let dogSchema = new Schema({
-  name: {
-    type: String
-  },
-  size: {
-    type: String
-  },
-  breed: {
-    type: String,
-  },
-  weight: {
-    type: Number,
-    minimum: 5
-  },
-  temperment: {
-    type: String,
-    required: false
-  },
-  sex: {
-    type: String,
-    required: true
-  },
-  pickupDate: {
-    type: Date,
-    default: Date.now
-  },
-  isChopped: {
-    type: Boolean,
-    required: true
-  },
-  isChipped: {
-    type: Boolean,
-    required: false
-  },
-  hasVacc: {
-    type: Boolean,
-    required: true
-  },
-  story: {
-    type: String,
-    required: true
-  }
+ name: {
+   type: String
+ },
+ image: {
+   type: String
+ },
+ size: {
+   type: String
+ },
+ breed: {
+   type: String,
+ },
+ weight: {
+   type: String
+ },
+ temperment: {
+   type: String,
+   required: false
+ },
+ sex: {
+   type: String,
+   required: true
+ },
+ pickupDate: {
+   type: Date,
+   default: Date.now
+ },
+ status: {
+   type: String,
+   required: true
+ },
+ isChopped: {
+   type: Boolean,
+   required: true
+ },
+ isChipped: {
+   type: Boolean,
+   required: false
+ },
+ hasVacc: {
+   type: Boolean,
+   required: true
+ },
+ story: {
+   type: String,
+   required: true
+ }
 });
-const Dog = mongoose.model("Dog", dogSchema);
+const dog = mongoose.model("dog", dogSchema);
 
-module.exports = Dog;
+module.exports = dog; 
