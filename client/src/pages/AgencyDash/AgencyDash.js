@@ -3,87 +3,67 @@ import SplashHeader from "../../components/SplashHeader";
 import AgencyForm from "../../components/AgencyForm";
 import AgencyNav from "../../components/AgencyNav";
 import AgencyDogCard from "../../components/AgencyDogCard";
-import API from "../../utils/API.js";
-import dummyDog from "../../dogInfo.js";
+import dogSeed from "./seed.json";
 
 class AgencyDash extends Component {
+
+// here , we created a state where dog seed schema (all of the dogs) populates the array of visual dogs.
   state = {
-    filteredDogs: []
+    dogSeed,
+    visualDogs: []
   };
 
-  addDog = () => {
-    const randoDog = dummyDog[Math.floor(Math.random() * dummyDog.length - 1)];
-    API.addDog(randoDog).then(() => console.log("working"));
-  };
-
-  showAllDogs = () => {
-    API.getDogs().then(dogs => {
-      console.log("we have dogs back", dogs);
-      this.setState({ dogs: dogs.data });
-    });
-  };
-
-  filterDogs = e => {
-    const { dogs } = this.state;
-    const { value } = e.target;
-    const filteredDogs = dogs.filter(dog => dog.status === value);
-    console.log("Waht is our filtred dogs", filteredDogs);
-
-    //now we set our filtered dogs to state...
-    //then we can map over that
-    this.setState({
-      filteredDogs
-    });
-  };
+// here, the visual dog array populates the "temp" array based on the status, which acts as a filter. If the "all" value is targeted (upon click), all the dogs will populate. If not, we will look to the status within each object to filter out which object(s) will populate upon the click of each button
+  sideClick = event => {
+    var temp = [];
+    if (event.target.value == "all") {
+      this.setState({
+        visualDogs: dogSeed
+      })
+    } else {
+      this.state.dogSeed.forEach(obj => {
+        if (obj.status == event.target.value) {
+          temp.push(obj);
+        }
+      })
+      this.setState({
+        visualDogs: temp
+      })
+    }
+  }
 
   render() {
-    const { filteredDogs } = this.state;
     return (
       <div>
-        <SplashHeader />
-        <AgencyForm />
-        <button type="button" onClick={this.addDog}>
-          {" "}
-          Add Dog{" "}
-        </button>
+        <div className="container">
+          <div className="row">
+            <SplashHeader />
+            <div className="input-field col s2">
 
-        <button type="button" onClick={this.showAllDogs}>
-          {" "}
-          Show Dogs{" "}
-        </button>
-
-        <button type="button" value="fostered" onClick={this.filterDogs}>
-          {" "}
-          Show Fostered Dogs{" "}
-        </button>
-
-        <button type="button" value="adopted" onClick={this.filterDogs}>
-          {" "}
-          Show Adopted Dogs{" "}
-        </button>
-
-        <button type="button" value="incomplete" onClick={this.filterDogs}>
-          {" "}
-          Show Imcomplete Dogs{" "}
-        </button>
-
-        <button type="button" value="complete" onClick={this.filterDogs}>
-          {" "}
-          Show Complete Dogs{" "}
-        </button>
-
-        <button type="button" value="transferred" onClick={this.filterDogs}>
-          {" "}
-          Show Transferred Dogs{" "}
-        </button>
-
-        <div>
-          {filteredDogs
-            ? filteredDogs.map(dog => <div key={dog}>{dog.name}</div>)
-            : null}
+{/*  Here, we add the side click function and the establish the visualDogs array as what is being mapped. */}
+              <AgencyNav click={this.sideClick}/>
+            </div>
+            <div className="input-field col s8">
+              <AgencyForm />
+              {this.state.visualDogs.map(dog => (
+                <AgencyDogCard
+                  key={dog.id}
+                  name={dog.name}
+                  sex={dog.sex}
+                  age={dog.age}
+                  weight={dog.weight}
+                  temperment={dog.temperment}
+                  breed={dog.breed}
+                  story={dog.story}
+                  status={dog.status}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );
+
   }
 }
 
