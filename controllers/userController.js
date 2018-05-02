@@ -1,24 +1,44 @@
-const db= require ('../models');
+const db = require ('../models');
+
+module.exports = {
+
+  // Create User **Working FE & BE **
+  createUser: function(req, res) {
+    // console.log("This is working")
+    db.users
+      .create({
+        email: req.body.email,
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        agency: req.body.agency,
+        phone: req.body.phone
+      })
+      .then(function(userData) {
+        res.send("success!");
+      })
+      .catch(function(error) {
+        res.send(error);
+      });
+  }
+
+  // FAD Dash
+  //Find by ID to see Saved Dogs - use db.users to see saved dogs
+  // findById: function (req, res) {
+  //   db.users
+  //   .findById(req.params.id)
+  //   .then(userData => res.json(userData))
+  //   .catch(err => res.status(422).json(err));
+  // }
+
+  //(Search Top Dog) Find all dogs by oldest date using db.dog and completed
+  // findAll
+
+  // //(Search dog) Find by id of "input value of breed, sex, weight, and completed" within db.dog
+  // findbyId
+
+  // //(Agency Info on Dog Card) Find by id to db.users "filter by agency that input dog". Adding agency info to dog card
+  // findById
 
 
-
-module.exports= {
-    createUser: function(req, res){
-        
-        //const dataBaseObject = {
-          //  name: req.body.firstName
-        //} 
-
-        db.users.create(
-            req.body
-        )
-        .then(function(userData){
-            res.send("success!")
-        }
-        )
-        .catch(function(error){
-            res.send(error)
-        }
-        )
-    }
-}
+};
