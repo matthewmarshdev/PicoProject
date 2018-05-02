@@ -1,5 +1,7 @@
 import React from "react";
 import "./AgencyDogCard.css";
+
+
 // import API from "../../utils/API";
 
 const AgencyDogCard = props => {
@@ -22,6 +24,8 @@ const AgencyDogCard = props => {
       <span className="cardElement">Chipped: {props.isChipped} </span>
       <span className="cardElement">Vaccinated: {props.hasVacc}</span>
       <br />
+       {/* here, status has been added as a card element */}
+      <span className="cardElement">Status: {props.status}</span>
       <span className="cardElement">Story: {props.story}</span>
     </div>
   );
