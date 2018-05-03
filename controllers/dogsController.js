@@ -1,4 +1,4 @@
-// const db = require("../models/dog");
+//const db = require("../models/dog");
 
 // // Defining methods for the booksController
 // module.exports = {

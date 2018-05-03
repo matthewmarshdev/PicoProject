@@ -34,6 +34,9 @@ const userSchema = new Schema({
     type: Number
     // required: true,
   },
+  type: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now,
