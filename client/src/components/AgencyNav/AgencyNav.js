@@ -13,10 +13,12 @@ class AgencyNav extends Component {
           <br />
           Compose Dog
         </button>
-        <button onClick={this.props.click} className="navButton" value="all">
+        <button onClick={this.props.click} className="navButton">
+        <div>
           <i className="material-icons white-text medium">pets</i>
           <br />
           All Dogs
+          </div>
         </button>
         <button onClick={this.props.click} className="navButton" value="incomplete">
           <i className="material-icons white-text medium" value="incomplete">report_problem</i>

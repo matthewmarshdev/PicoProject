@@ -18,11 +18,11 @@ const userSchema = new Schema({
     type: String
     // // required: "Password is Required",
   },
-  firstname: {
+  firstName: {
     type: String
     // required: "Name is Required",
   },
-  lastname: {
+  lastName: {
     type: String
     // required: "Name is Required",
   },
