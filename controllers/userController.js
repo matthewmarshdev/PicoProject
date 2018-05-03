@@ -12,7 +12,8 @@ module.exports = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         agency: req.body.agency,
-        phone: req.body.phone
+        phone: req.body.phone,
+        ofAge: false,
       })
       .then(function(userData) {
         res.send("success!");
@@ -21,6 +22,12 @@ module.exports = {
         res.send(error);
       });
   }
+
+  //method needed to findOneAndUpdate for Foster/Adopter (only foster fields replace req.body)
+
+  //method needed to findOneAndUpdate for Agency (only agency fields replace req.body)
+
+  
 
   // FAD Dash
   //Find by ID to see Saved Dogs - use db.users to see saved dogs
