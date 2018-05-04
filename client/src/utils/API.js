@@ -1,35 +1,41 @@
 import axios from "axios";
 
-//calls to server saved in one place, take as needed for compnents
-//penis
 export default {
+  addDog: function (userData) {
+    return axios.post("/api/dogs", userData);
+  },
+  getDogs: function () {
+    return axios.get('/api/dogs')
+    //  getDogs: () => return axios.get('/api/dogs'),
+  },
+  getDogsById: function (id) {
+    return axios.get('/api/dogs/' + id)
+    // getDogById: id => axios.get('/api/dogs/' + id),
+  },
 
-    saveDog: function(dogData) {
-      return axios.post("/api/dog", dogData);
-    },
+  updateDogbyId: function (id) {
+    return axios.put('/api/dogs/' + id)
+    // updateDogById: id => axios.put('/api/dogs/' + id),
+  },
+  // Don
+  saveUser: function (userData) {
+    // console.log(userData);
+    return axios.post("/api/users", userData);
+  },
 
-    updateDog: function(id, dogData) {
-      return axios.post("/api/dog", dogData);
-    },
+  getUserByEmail: function (userEmail) {
+    return axios.get("/api/users/" + userEmail);
+    // Has no body gets reference to the user off of the email
+    // getUserByEmail: userEmail => axios.get("/api/user/" + userEmail),
+  },
 
-    getDogs: function(){
-      return axios.get("/api/dog");
-    },
-
-    getDog: function(id){
-      return axios.get("/api/dog" + id);
-    },
-
-
-    saveUser: function(userData) {
-      return axios.post("/api/user", userData);
-    },
-
-    updateUser: function(id, userData) {
-      return axios.post("/api/user", userData);
-    },
-
-    getUser: function(id){
-      return axios.get("/api/user" + id);
-    },
-};
+  updateUserByEmail: function() {
+    return axios.update("/api/user");
+    // Expects all needed information in the body
+    //updateUserById: () => axios.update("/api/user");
+  }
+}
+  //  login: userData => {
+  //  	console.log(userData);
+  //  	return axios.put('/api/user/submitLogin', userData);
+  // }

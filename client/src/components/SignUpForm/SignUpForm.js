@@ -15,7 +15,7 @@ class SignUpForm extends Component {
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log(name, value);
+    //console.log(name, value);
     this.setState({
       [name]: value
     });
@@ -23,7 +23,6 @@ class SignUpForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     API.saveUser(this.state)
       .then(res => console.log(res))
       .catch(err => console.log(err));
@@ -114,7 +113,7 @@ class SignUpForm extends Component {
                   value="fosterAdopter"
                   checked={this.state.type === "fosterAdopter"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  //defaultChecked="false"
                 />
                 <span>Foster / Adopter</span>
               </label>
@@ -127,7 +126,7 @@ class SignUpForm extends Component {
                   value="agency"
                   checked={this.state.type === "agency"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  //defaultChecked="false"
                 />
                 <span>Agency</span>
               </label>
