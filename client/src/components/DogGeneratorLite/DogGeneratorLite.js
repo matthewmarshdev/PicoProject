@@ -3,23 +3,24 @@ import "./DogGeneratorLite.css";
 import API from "../../utils/API";
 
 class DogGeneratorLite extends Component {
+
+  //name, size, breed, weight, sex, pickupDate
+
+  //temperment, isChopped, isChipped, hasVacc, story
+
   state = {
-    ofAge: "",
-    haveOwned: "",
-    unanYes: "",
-    fullAvail: "",
-    aggroPets: "",
-    hasTallFence: "",
-    address1: "",
-    address2: "",
-    state: "",
-    city: "",
-    zip: "",
+    name: "",
+    size: "",
+    breed: "",
+    weight: "",
+    sex: "",
+    pickupDate: "",
     temperment: "",
     isChopped: "",
     isChipped: "",
     hasVacc: "",
-    story: ""
+    story: "",
+    status: ""
   };
 
   handleInputChange = event => {
@@ -79,9 +80,9 @@ class DogGeneratorLite extends Component {
                 <input
                   name="size"
                   value="small"
-                  checked={this.state.type === "small"}
+                  //checked={this.state.type === "small"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Small</span>
@@ -92,9 +93,9 @@ class DogGeneratorLite extends Component {
                 <input
                   name="size"
                   value="medium"
-                  checked={this.state.type === "medium"}
+                  //checked={this.state.type === "medium"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Medium</span>
@@ -105,9 +106,9 @@ class DogGeneratorLite extends Component {
                 <input
                   name="size"
                   value="large"
-                  checked={this.state.type === "large"}
+                  //checked={this.state.type === "large"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Large</span>
@@ -121,21 +122,21 @@ class DogGeneratorLite extends Component {
                 name="weight"
                 value={this.state.weight}
                 onChange={this.handleInputChange}
-                type="number"
+                type="text"
                 className="validate"
               />
               <label htmlFor="weight">Weight</label>
             </div>
             <div className="input-field col s4">
               <input
-                id="Sex"
-                name="Sex"
-                value={this.state.Sex}
+                id="sex"
+                name="sex"
+                value={this.state.sex}
                 onChange={this.handleInputChange}
                 type="text"
                 className="validate"
               />
-              <label htmlFor="Sex">Sex</label>
+              <label htmlFor="sex">Sex</label>
             </div>
             <div className="input-field col s4">
               <input
@@ -146,7 +147,7 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="Sex">Sex</label>
+              <label htmlFor="temperment">Temperment</label>
             </div>
           </div>
           <div className="row">
@@ -156,7 +157,7 @@ class DogGeneratorLite extends Component {
                 name="pickupDate"
                 value={this.state.pickupDate}
                 onChange={this.handleInputChange}
-                type="number"
+                type="text"
                 className="validate"
               />
               <label htmlFor="pickupDate">Date Available for Pickup</label>
@@ -171,7 +172,7 @@ class DogGeneratorLite extends Component {
                     value="true"
                     checked={this.state.isChopped === "true"}
                     onChange={this.handleInputChange}
-                    defaultChecked="true"
+                    //defaultChecked="true"
                     type="radio"
                   />
                   <span>Neutered</span>
@@ -198,7 +199,7 @@ class DogGeneratorLite extends Component {
                     value="true"
                     checked={this.state.isChipped === "true"}
                     onChange={this.handleInputChange}
-                    defaultChecked="true"
+                    //defaultChecked="true"
                     type="radio"
                   />
                   <span>Has Chip</span>
@@ -225,7 +226,7 @@ class DogGeneratorLite extends Component {
                     value="true"
                     checked={this.state.hasVacc === "true"}
                     onChange={this.handleInputChange}
-                    defaultChecked="true"
+                    //defaultChecked="true"
                     type="radio"
                   />
                   <span>Vaccinated</span>
@@ -257,10 +258,52 @@ class DogGeneratorLite extends Component {
               />
             </div>
           </div>
+          <div className="row">
+            <p>
+              <label>
+                <input
+                  name="status"
+                  value="complete"
+                  //checked={this.state.type === "complete"}
+                  onChange={this.handleInputChange}
+                  defaultChecked=""
+                  type="radio"
+                />
+                <span>Complete</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  name="status"
+                  value="fostered"
+                  //checked={this.state.type === "fostered"}
+                  onChange={this.handleInputChange}
+                  defaultChecked=""
+                  type="radio"
+                />
+                <span>Fostered</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  name="status"
+                  value="transferred"
+                  //checked={this.state.type === "transferred"}
+                  onChange={this.handleInputChange}
+                  defaultChecked=""
+                  type="radio"
+                />
+                <span>Transferred</span>
+              </label>
+            </p>
+          </div>
           <button
             className="btn waves-effect waves-light"
             type="submit"
             name="action"
+            onClick={this.handleSubmit}
           >
             Submit
           </button>

@@ -3,6 +3,7 @@ import SplashHeader from "../../components/SplashHeader";
 import AgencyForm from "../../components/AgencyForm";
 import AgencyNav from "../../components/AgencyNav";
 import AgencyDogCard from "../../components/AgencyDogCard";
+import DogGeneratorLite from "../../components/DogGeneratorLite";
 // import dogSeed from "./seed.json";
 import API from "../../utils/API";
 // import { log } from "util";
@@ -11,7 +12,7 @@ class AgencyDash extends Component {
 
 // here , we created a state where dog seed schema (all of the dogs) populates the array of visual dogs.
   state = {
-  
+    filteredDogs: []
   };
 
   // Data is pulled on component did mount -- then set to state
@@ -65,6 +66,7 @@ class AgencyDash extends Component {
               <AgencyNav click={this.sideClick}/>
             </div>
             <div className="input-field col s8">
+              <DogGeneratorLite />
               <AgencyForm />
               { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div> }
             </div>
