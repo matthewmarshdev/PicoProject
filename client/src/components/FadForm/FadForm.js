@@ -44,9 +44,9 @@ class FadForm extends Component {
                 <input
                   name="ofAge"
                   value="true"
-                  checked={this.state.type === "true"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>18 or older</span>
@@ -57,9 +57,9 @@ class FadForm extends Component {
                 <input
                   name="ofAge"
                   value="false"
-                  checked={this.state.type === "false"}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Younger than 18</span>
@@ -72,9 +72,9 @@ class FadForm extends Component {
                 <input
                   name="haveOwned"
                   value="true"
-                  checked={this.state.type === "true"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Owned Dog Before</span>
@@ -85,9 +85,9 @@ class FadForm extends Component {
                 <input
                   name="haveOwned"
                   value="false"
-                  checked={this.state.type === "false"}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Never Owned Dog</span>
@@ -100,9 +100,9 @@ class FadForm extends Component {
                 <input
                   name="unanYes"
                   value="true"
-                  checked={this.state.type === "true"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Household agrees with adoption of dog</span>
@@ -113,9 +113,9 @@ class FadForm extends Component {
                 <input
                   name="unanYes"
                   value="false"
-                  checked={this.state.type === "false"}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Household does not agree with adoption of dog</span>
@@ -128,9 +128,9 @@ class FadForm extends Component {
                 <input
                   name="fullAvail"
                   value="true"
-                  checked={this.state.type === "true"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Full Availability</span>
@@ -141,9 +141,9 @@ class FadForm extends Component {
                 <input
                   name="fullAvail"
                   value="false"
-                  checked={this.state.type === "false"}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Part Time Availability</span>
@@ -156,9 +156,9 @@ class FadForm extends Component {
                 <input
                   name="aggroPets"
                   value="true"
-                  checked={this.state.type === "true"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Has aggressive pets</span>
@@ -169,9 +169,9 @@ class FadForm extends Component {
                 <input
                   name="aggroPets"
                   value="false"
-                  checked={this.state.type === "false"}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Has no aggressive pets</span>
@@ -184,9 +184,9 @@ class FadForm extends Component {
                 <input
                   name="hasTallFence"
                   value="tallFence"
-                  checked={this.state.type === "tallFence"}
+                  //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Has a tall fence in yard</span>
@@ -197,9 +197,9 @@ class FadForm extends Component {
                 <input
                   name="hasTallFence"
                   value="noTallFence"
-                  checked={this.state.type === "noTallFence"}
+                  //checked={this.state.type === "noTallFence"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Has no tall fence in yard</span>
@@ -210,9 +210,9 @@ class FadForm extends Component {
                 <input
                   name="hasTallFence"
                   value="noYard"
-                  checked={this.state.type === "noYard"}
+                  //checked={this.state.type === "noYard"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Has no yard</span>
