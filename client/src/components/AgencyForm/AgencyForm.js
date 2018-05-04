@@ -25,7 +25,7 @@ class AgencyForm extends Component {
     event.preventDefault();
     console.log(this.state);
     // the below api update method doesn't exist yet
-    API.updateUser(this.state)
+    API.updateUserByEmail(this.state)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -40,9 +40,9 @@ class AgencyForm extends Component {
                 <input
                   name="profit"
                   value="profit"
-                  checked={this.state.type === "profit"}
+                  //checked={this.state.type === "profit"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>For Profit</span>
@@ -53,9 +53,9 @@ class AgencyForm extends Component {
                 <input
                   name="profit"
                   value="nonProfit"
-                  checked={this.state.type === "nonProfit"}
+                  //checked={this.state.type === "nonProfit"}
                   onChange={this.handleInputChange}
-                  defaultChecked="false"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Non Profit</span>
@@ -68,9 +68,9 @@ class AgencyForm extends Component {
                 <input
                   name="duration"
                   value="long"
-                  checked={this.state.type === "long"}
+                  //checked={this.state.type === "long"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  defaultChecked=""
                   type="radio"
                 />
                 <span>Long Term</span>
@@ -83,7 +83,7 @@ class AgencyForm extends Component {
                   value="short"
                   checked={this.state.type === "short"}
                   onChange={this.handleInputChange}
-                  defaultChecked="true"
+                  //defaultChecked="true"
                   type="radio"
                 />
                 <span>Short Term</span>

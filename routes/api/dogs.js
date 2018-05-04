@@ -4,7 +4,8 @@ const dogsController = require("../../controllers/dogsController");
 // Matches with "/api/dogs"
 router.route("/")
   .get(dogsController.getDogs)
-  .post(dogsController.addDog);
+  .post(dogsController.addDog)
+
 
 // Matches with "/api/dogs/:id"
 router

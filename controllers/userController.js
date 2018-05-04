@@ -1,11 +1,9 @@
-const db = require ('../models');
+const Users = require("../models/users");
 
 module.exports = {
 
-  // Create User **Working FE & BE **
-  createUser: function(req, res) {
-    // console.log("This is working")
-    db.users
+  createUser: function (req, res) {
+    Users
       .create({
         email: req.body.email,
         password: req.body.password,
@@ -14,31 +12,49 @@ module.exports = {
         agency: req.body.agency,
         phone: req.body.phone
       })
-      .then(function(userData) {
-        res.send("success!");
+      .then(function (userData) {
+        res.send("success! It worked");
       })
-      .catch(function(error) {
-        res.send(error);
+      .catch(function (error) {
+        res.send(console.log(error));
       });
+  },
+
+  login: function (req, res) {
+    console.log(req.body);
+    Users
+      .findOne(req.body, function (user) {
+        console.log(user);
+      })
+      .then(function (userData) {
+        res.json(userData);
+      })
+      .catch(err => res.json(err));
+  },
+
+  findUserByEmail: function (req, res) {
+    const email = req.params.email;
+    Users
+      .findOne({ email })
+      .then(userData => {
+        const { email, phone, firstName, lastName, agency } = userData;
+        res.json({ email, phone, firstName, lastName, agency });
+      })
+      .catch(err => res.json(err));
+  },
+
+  updateUserById: function (req, res) {
+    // Expects updateFields to be exact model names, inside of an object
+    const { id, updateFields } = req.body;
+    Users
+      .update({ id }, { ...updateFields })
+      .then((err, affected, resp) => {
+        console.log("What is our response?", resp);
+        // check if field was update otherwise throw error
+        if (affected === 0)
+          throw new Error("User was not updated properly", id);
+        else res.json(resp);
+      })
+      .catch(err => res.json(err));
   }
-
-  // FAD Dash
-  //Find by ID to see Saved Dogs - use db.users to see saved dogs
-  // findById: function (req, res) {
-  //   db.users
-  //   .findById(req.params.id)
-  //   .then(userData => res.json(userData))
-  //   .catch(err => res.status(422).json(err));
-  // }
-
-  //(Search Top Dog) Find all dogs by oldest date using db.dog and completed
-  // findAll
-
-  // //(Search dog) Find by id of "input value of breed, sex, weight, and completed" within db.dog
-  // findbyId
-
-  // //(Agency Info on Dog Card) Find by id to db.users "filter by agency that input dog". Adding agency info to dog card
-  // findById
-
-
-};
+}
