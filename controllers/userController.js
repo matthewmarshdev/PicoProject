@@ -43,18 +43,19 @@ module.exports = {
       .catch(err => res.json(err));
   },
 
-  updateUserById: function (req, res) {
+  updateUserByEmail: function (req, res) {
     // Expects updateFields to be exact model names, inside of an object
-    const { id, updateFields } = req.body;
+    const { email, updateFields } = req.body;
     Users
-      .update({ id }, { ...updateFields })
+      .update({ email }, { ...updateFields })
       .then((err, affected, resp) => {
         console.log("What is our response?", resp);
         // check if field was update otherwise throw error
         if (affected === 0)
-          throw new Error("User was not updated properly", id);
+          throw new Error("User was not updated properly", email);
         else res.json(resp);
       })
       .catch(err => res.json(err));
-  }
+  },
+
 }

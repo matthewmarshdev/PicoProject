@@ -30,9 +30,13 @@ export default {
   },
 
   updateUserByEmail: function() {
-    return axios.update("/api/user");
+    return axios.put("/api/user");
     // Expects all needed information in the body
     //updateUserById: () => axios.update("/api/user");
+  },
+  // FAD Form
+  updateUser: function() {
+    return axios.put('/api/users/');
   }
 }
   //  login: userData => {

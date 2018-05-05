@@ -33,25 +33,25 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  ofage: {
+  ofAge: {
     type: Boolean
   },
-  haveowned: {
+  haveOwned: {
     type: Boolean
   },
   wheresleep: {
     type: Boolean
   },
-  unanimousyes: {
+  unanYes: {
     type: Boolean
   },
-  fullavailable: {
+  fullAvail: {
     type: Boolean
   },
-  aggropets: {
+  aggroPets: {
     type: Boolean
   },
-  hastallfence: {
+  hasTallFence: {
     type: Boolean
   },
   aggreeterms: {
@@ -63,13 +63,13 @@ const userSchema = new Schema({
   address2: {
     type: String
   },
-  stateprovidence: {
+  state: {
     type: String
   },
   city: {
     type: String
   },
-  zipcode: {
+  zip: {
     type: Number
   }
 });
