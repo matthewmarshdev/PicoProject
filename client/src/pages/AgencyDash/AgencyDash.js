@@ -4,9 +4,7 @@ import AgencyForm from "../../components/AgencyForm";
 import AgencyNav from "../../components/AgencyNav";
 import AgencyDogCard from "../../components/AgencyDogCard";
 import DogGeneratorLite from "../../components/DogGeneratorLite";
-// import dogSeed from "./seed.json";
 import API from "../../utils/API";
-// import { log } from "util";
 
 class AgencyDash extends Component {
 
