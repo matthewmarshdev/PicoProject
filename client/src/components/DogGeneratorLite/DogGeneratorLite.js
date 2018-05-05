@@ -4,9 +4,7 @@ import API from "../../utils/API";
 
 class DogGeneratorLite extends Component {
 
-  //name, size, breed, weight, sex, pickupDate
 
-  //temperment, isChopped, isChipped, hasVacc, story
 
   state = {
     name: "",
@@ -22,6 +20,14 @@ class DogGeneratorLite extends Component {
     story: "",
     status: ""
   };
+
+
+ componentWillReceiveProps = (nextProps) => {
+   console.log("props are here?", nextProps.dog);
+   this.setState({
+    ...nextProps.dog
+   })
+ }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -47,6 +53,7 @@ class DogGeneratorLite extends Component {
   //TODO: create field for dog image url
 
   render() {
+    console.log("whaaatt", this.props)
     return (
       <div className="row formRow">
         <form className="col s8">

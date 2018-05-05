@@ -6,7 +6,7 @@ import "./AgencyDogCard.css";
 
 const AgencyDogCard = props => {
   return (
-    <div className="col s8">
+    <div className="col s8" onClick={props.onClick}>
       <span className="cardElement">{props.name}</span>
       <br />
       <img alt="dog" src={props.img} />
