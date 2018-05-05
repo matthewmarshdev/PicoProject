@@ -18,7 +18,8 @@ class AgencyDash extends Component {
     API.getDogs().then(dogs => {
       this.setState({
         dogs: dogs.data,
-        visualDogs: dogs.data
+        visualDogs: dogs.data,
+        editDog: null
        })
     }) 
   }
@@ -47,8 +48,13 @@ class AgencyDash extends Component {
         breed={dog.breed}
         story={dog.story}
         status={dog.status}
+        onClick={e => this.populateToForm(e, dog)}
       />
     ))
+  }
+
+  populateToForm = (e, editDog) => {
+    this.setState({ editDog });
   }
 
   render() {
@@ -64,7 +70,7 @@ class AgencyDash extends Component {
               <AgencyNav click={this.sideClick}/>
             </div>
             <div className="input-field col s8">
-              <DogGeneratorLite />
+              <DogGeneratorLite dog={this.state.editDog} />
               <AgencyForm />
               { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div> }
             </div>
