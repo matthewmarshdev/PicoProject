@@ -78,7 +78,6 @@ class AgencyDash extends Component {
         </div>
       </div>
     );
-
   }
 }
 
