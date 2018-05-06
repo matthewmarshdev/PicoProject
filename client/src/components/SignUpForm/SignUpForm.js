@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./SignUpForm.css";
 import API from "../../utils/API";
+import AgencyForm from "../AgencyForm/AgencyForm";
+import FadForm from "../FadForm/FadForm";
 
 class SignUpForm extends Component {
   state = {
@@ -10,7 +12,20 @@ class SignUpForm extends Component {
     lastName: "",
     agency: "",
     phone: "",
-    type: ""
+    type: "",
+    ofAge: "",
+    haveOwned: "",
+    unanYes: "",
+    fullAvail: "",
+    aggroPets: "",
+    hasTallFence: "",
+    profit: "",
+    duration: "",
+    address1: "",
+    address2: "",
+    state: "",
+    city: "",
+    zip: ""
   };
 
   handleInputChange = event => {
@@ -132,6 +147,8 @@ class SignUpForm extends Component {
               </label>
             </p>
           </div>
+          {this.state.type === "agency" ? <AgencyForm />: <span></span> }
+          {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> }
           <button
             className="btn waves-effect waves-light"
             type="submit"

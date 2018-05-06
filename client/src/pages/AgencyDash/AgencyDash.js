@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SplashHeader from "../../components/SplashHeader";
-import AgencyForm from "../../components/AgencyForm";
 import AgencyNav from "../../components/AgencyNav";
 import AgencyDogCard from "../../components/AgencyDogCard";
 import DogGeneratorLite from "../../components/DogGeneratorLite";
@@ -10,7 +9,9 @@ class AgencyDash extends Component {
 
 // here , we created a state where dog seed schema (all of the dogs) populates the array of visual dogs.
   state = {
-    filteredDogs: []
+    filteredDogs: [],
+    willRenderDogGen: false,
+    willRenderUserSettings: false
   };
 
   // Data is pulled on component did mount -- then set to state
@@ -34,6 +35,20 @@ class AgencyDash extends Component {
       this.setState({
         visualDogs
       });
+  }
+
+  componentsDogClick = () => {
+    this.setState ({
+      willRenderDogGen: true,
+      willRenderUserSettings: false
+    })
+  }
+
+  componentsUserClick = () => {
+    this.setState ({
+      willRenderDogGen: false,
+      willRenderUserSettings: true
+    })
   }
 
   renderDogCards = dogs => {
@@ -67,13 +82,15 @@ class AgencyDash extends Component {
             <div className="input-field col s2">
 
 {/*  Here, we add the side click function and the establish the visualDogs array as what is being mapped. */}
-              <AgencyNav click={this.sideClick}/>
+              <AgencyNav click={this.sideClick} componentsUserClick={this.componentsUserClick} componentsDogClick={this.componentsDogClick}/>
             </div>
+            
             <div className="input-field col s8">
-              <DogGeneratorLite dog={this.state.editDog} />
-              <AgencyForm />
-              { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div> }
-            </div>
+              {this.state.willRenderDogGen ? <DogGeneratorLite dog={this.state.editDog} />:<span></span> }
+              {this.state.willRenderUserSettings ? <p>User component goes here</p> : <span></span> }
+              {/*this.state.type === "fosterAdopter" ? <FadForm />: <span></span> */}
+              { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doggies</div> }
+              </div>
           </div>
         </div>
       </div>
