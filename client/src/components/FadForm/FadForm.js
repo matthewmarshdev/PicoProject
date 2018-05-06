@@ -278,13 +278,6 @@ class FadForm extends Component {
               <label htmlFor="zip">Zip</label>
             </div>
           </div>
-          <button
-            className="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-          >
-            Submit
-          </button>
         </form>
       </div>
     );
