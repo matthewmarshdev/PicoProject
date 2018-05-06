@@ -4,9 +4,7 @@ import API from "../../utils/API";
 
 class DogGeneratorLite extends Component {
 
-  //name, size, breed, weight, sex, pickupDate
 
-  //temperment, isChopped, isChipped, hasVacc, story
 
   state = {
     name: "",
@@ -20,8 +18,17 @@ class DogGeneratorLite extends Component {
     isChipped: "",
     hasVacc: "",
     story: "",
-    status: ""
+    status: "",
+    image: ""
   };
+
+
+ componentWillReceiveProps = (nextProps) => {
+   console.log("props are here?", nextProps.dog);
+   this.setState({
+    ...nextProps.dog
+   })
+ }
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -47,6 +54,7 @@ class DogGeneratorLite extends Component {
   //TODO: create field for dog image url
 
   render() {
+    console.log("whaaatt", this.props)
     return (
       <div className="row formRow">
         <form className="col s8">
@@ -249,6 +257,7 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <div className="col s8">
               <input
+                placeholder="Story"
                 id="story"
                 name="story"
                 value={this.state.story}
@@ -256,6 +265,20 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
+              <label htmlFor="story">Include the Dog's Story Here</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s8">
+              <input
+                id="image"
+                name="image"
+                value={this.state.image}
+                onChange={this.handleInputChange}
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="image">Paste Image URL Here</label>
             </div>
           </div>
           <div className="row">

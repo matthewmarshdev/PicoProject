@@ -7,7 +7,7 @@ import Logo from "../../components/Logo";
 class SignUp extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <SplashHeader />
         <Logo />
         <SignUpForm />
