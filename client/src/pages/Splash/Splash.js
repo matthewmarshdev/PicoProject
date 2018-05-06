@@ -6,7 +6,7 @@ import SplashHeader from "../../components/SplashHeader";
 class Splash extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <SplashHeader />
         <Logo />
         <LgnSgnUpBtn />

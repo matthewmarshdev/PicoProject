@@ -18,7 +18,8 @@ class DogGeneratorLite extends Component {
     isChipped: "",
     hasVacc: "",
     story: "",
-    status: ""
+    status: "",
+    image: ""
   };
 
 
@@ -256,6 +257,7 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <div className="col s8">
               <input
+                placeholder="Story"
                 id="story"
                 name="story"
                 value={this.state.story}
@@ -263,6 +265,20 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
+              <label htmlFor="story">Include the Dog's Story Here</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s8">
+              <input
+                id="image"
+                name="image"
+                value={this.state.image}
+                onChange={this.handleInputChange}
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="image">Paste Image URL Here</label>
             </div>
           </div>
           <div className="row">

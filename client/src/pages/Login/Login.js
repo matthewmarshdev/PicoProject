@@ -5,9 +5,10 @@ import Logo from "../../components/Logo";
 
 
 class Login extends Component {
+
   render() {
     return (
-      <div>
+      <div className="container">
         <SplashHeader />
         <Logo />
         <LoginForm />
