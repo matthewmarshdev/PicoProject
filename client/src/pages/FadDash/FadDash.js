@@ -58,7 +58,6 @@ renderDogCards = dogs => {
               <FadNav />
             </div>
             <div className="input-field col s8">
-              <FadForm />
               { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div>}
             </div>
           </div>
