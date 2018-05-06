@@ -61,6 +61,7 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <div className="input-field col s6">
               <input
+                placeholder="Name"
                 id="name"
                 name="name"
                 value={this.state.name}
@@ -68,10 +69,10 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="name">Name</label>
             </div>
             <div className="input-field col s6">
               <input
+                placeholder="Breed"
                 id="breed"
                 name="breed"
                 value={this.state.breed}
@@ -79,7 +80,6 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="breed">Breed</label>
             </div>
           </div>
           <div className="row">
@@ -126,6 +126,7 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <div className="input-field col s4">
               <input
+                placeholder="Weight"
                 id="weight"
                 name="weight"
                 value={this.state.weight}
@@ -133,10 +134,10 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="weight">Weight</label>
             </div>
             <div className="input-field col s4">
               <input
+                placeholder="Sex"
                 id="sex"
                 name="sex"
                 value={this.state.sex}
@@ -144,10 +145,10 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="sex">Sex</label>
             </div>
             <div className="input-field col s4">
               <input
+                placeholder="Temperament"
                 id="temperment"
                 name="temperment"
                 value={this.state.temperment}
@@ -155,12 +156,12 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="temperment">Temperment</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s8">
               <input
+                placeholder="Available Pickup Date"
                 id="pickupDate"
                 name="pickupDate"
                 value={this.state.pickupDate}
@@ -168,7 +169,6 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="pickupDate">Date Available for Pickup</label>
             </div>
           </div>
           <div className="row">
@@ -265,12 +265,12 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="story">Include the Dog's Story Here</label>
             </div>
           </div>
           <div className="row">
             <div className="col s8">
               <input
+                placeholder="Image Url"
                 id="image"
                 name="image"
                 value={this.state.image}
@@ -278,7 +278,6 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-              <label htmlFor="image">Paste Image URL Here</label>
             </div>
           </div>
           <div className="row">

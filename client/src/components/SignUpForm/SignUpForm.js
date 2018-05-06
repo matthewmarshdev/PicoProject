@@ -31,7 +31,7 @@ class SignUpForm extends Component {
   render() {
     return (
       <div className="row formRow">
-        <form className="col s8">
+        <form className="col s8 offset-s2">
           <div className="row">
             <div className="input-field col s6">
               <input
