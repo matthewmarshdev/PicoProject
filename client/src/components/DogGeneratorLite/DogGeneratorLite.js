@@ -61,7 +61,7 @@ class DogGeneratorLite extends Component {
   render() {
     console.log("whaaatt", this.props);
     return <div className="row formRow">
-        <h2> Create a new Dog </h2>
+        <h2> Dog Info </h2>
         <form className="col s8">
           <div className="row">
             <div className="input-field col s6">
