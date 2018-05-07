@@ -65,6 +65,7 @@ class AgencyDash extends Component {
         temperment={dog.temperment}
         breed={dog.breed}
         story={dog.story}
+        image={dog.image}
         status={dog.status}
         onClick={e => this.populateToForm(e, dog)}
       />

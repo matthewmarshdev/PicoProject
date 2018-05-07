@@ -40,7 +40,7 @@ class AgencyUserSettings extends Component {
 
   render() {
     return <div className="row formRow">
-        <h2>User Settings</h2>
+        <h2>Agency User Settings</h2>
         <form className="col s8">
           <div className="row">
             <div className="input-field col s6">
@@ -76,13 +76,11 @@ class AgencyUserSettings extends Component {
             <p>
               <label>
                 <input name="type" type="radio" value="fosterAdopter" checked={this.state.type === "fosterAdopter"} onChange={this.handleInputChange} />
-                  //defaultChecked="false"
                 <span>Foster / Adopter</span>
               </label>
             </p>
           </div>
           <AgencyForm />
-
           <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.handleSubmit}>
             Update info
           </button>

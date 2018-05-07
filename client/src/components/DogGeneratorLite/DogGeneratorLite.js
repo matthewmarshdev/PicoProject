@@ -120,7 +120,7 @@ class DogGeneratorLite extends Component {
             <div className="input-field col s4">
               <p>
                 <label>
-                  <input name="isChopped" value="true" checked={this.state.isChopped === "true"} onChange={this.handleInputChange} type="radio" /> //defaultChecked="true"
+                  <input name="isChopped" value="true" checked={this.state.isChopped === "true"} onChange={this.handleInputChange} type="radio" />
                   <span>Neutered</span>
                 </label>
               </p>
@@ -134,7 +134,8 @@ class DogGeneratorLite extends Component {
             <div className="input-field col s4">
               <p>
                 <label>
-                  <input name="isChipped" value="true" checked={this.state.isChipped === "true"} onChange={this.handleInputChange} type="radio" /> //defaultChecked="true"
+                  <input name="isChipped" value="true" checked={this.state.isChipped === "true"} onChange={this.handleInputChange} type="radio" /> 
+                  
                   <span>Has Chip</span>
                 </label>
               </p>
@@ -148,7 +149,7 @@ class DogGeneratorLite extends Component {
             <div className="input-field col s4">
               <p>
                 <label>
-                  <input name="hasVacc" value="true" checked={this.state.hasVacc === "true"} onChange={this.handleInputChange} type="radio" /> //defaultChecked="true"
+                  <input name="hasVacc" value="true" checked={this.state.hasVacc === "true"} onChange={this.handleInputChange} type="radio" />
                   <span>Vaccinated</span>
                 </label>
               </p>
