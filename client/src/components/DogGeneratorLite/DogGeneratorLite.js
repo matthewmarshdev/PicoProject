@@ -43,16 +43,18 @@ class DogGeneratorLite extends Component {
       .catch(err => console.log(err));
   };
 
-  //name, size, breed, weight, sex, pickupDate
-
-  //temperment, isChopped, isChipped, hasVacc, story
-
-  //TODO: create field for dog image url
+  handleUpdate = event => {
+    event.preventDefault();
+    console.log(this.state);
+    // the below api createDog method doesn't exist yet
+    API.updateDogbyId(this.state)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
 
   render() {
-    console.log("whaaatt", this.props);
-    return (
-      <div className="row formRow">
+    return <div className="row formRow">
+        <h2> Dog Info </h2>
         <form className="col s8">
           <div className="row">
             <div className="input-field col s6">
@@ -81,40 +83,22 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <p>
               <label>
-                <input
-                  name="size"
-                  value="small"
-                  //checked={this.state.type === "small"}
-                  onChange={this.handleInputChange}
-                  defaultChecked=""
-                  type="radio"
-                />
+                <input name="size" value="small" onChange={this.handleInputChange 
+                  } defaultChecked="" type="radio" />
                 <span>Small</span>
               </label>
             </p>
             <p>
               <label>
-                <input
-                  name="size"
-                  value="medium"
-                  //checked={this.state.type === "medium"}
-                  onChange={this.handleInputChange}
-                  defaultChecked=""
-                  type="radio"
-                />
+                <input name="size" value="medium" onChange={this.handleInputChange 
+                  } defaultChecked="" type="radio" />
                 <span>Medium</span>
               </label>
             </p>
             <p>
               <label>
-                <input
-                  name="size"
-                  value="large"
-                  //checked={this.state.type === "large"}
-                  onChange={this.handleInputChange}
-                  defaultChecked=""
-                  type="radio"
-                />
+                <input name="size" value="large" onChange={this.handleInputChange
+                  } defaultChecked="" type="radio" />
                 <span>Large</span>
               </label>
             </p>
