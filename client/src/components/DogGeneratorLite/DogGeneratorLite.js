@@ -52,14 +52,7 @@ class DogGeneratorLite extends Component {
       .catch(err => console.log(err));
   };
 
-  //name, size, breed, weight, sex, pickupDate
-
-  //temperment, isChopped, isChipped, hasVacc, story
-
-  //TODO: create field for dog image url
-
   render() {
-    console.log("whaaatt", this.props);
     return <div className="row formRow">
         <h2> Dog Info </h2>
         <form className="col s8">
@@ -76,21 +69,21 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <p>
               <label>
-                <input name="size" value="small" onChange={this.handleInputChange //checked={this.state.type === "small"}
+                <input name="size" value="small" onChange={this.handleInputChange 
                   } defaultChecked="" type="radio" />
                 <span>Small</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="size" value="medium" onChange={this.handleInputChange //checked={this.state.type === "medium"}
+                <input name="size" value="medium" onChange={this.handleInputChange 
                   } defaultChecked="" type="radio" />
                 <span>Medium</span>
               </label>
             </p>
             <p>
               <label>
-                <input name="size" value="large" onChange={this.handleInputChange //checked={this.state.type === "large"}
+                <input name="size" value="large" onChange={this.handleInputChange
                   } defaultChecked="" type="radio" />
                 <span>Large</span>
               </label>

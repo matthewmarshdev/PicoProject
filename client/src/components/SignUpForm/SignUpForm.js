@@ -13,12 +13,6 @@ class SignUpForm extends Component {
     agency: "",
     phone: "",
     type: "",
-    ofAge: "",
-    haveOwned: "",
-    unanYes: "",
-    fullAvail: "",
-    aggroPets: "",
-    hasTallFence: "",
     profit: "",
     duration: "",
     address1: "",
@@ -48,6 +42,7 @@ class SignUpForm extends Component {
       <div className="row formRow">
         <form className="col s8">
           <div className="row">
+            <h4>Sign Up to start registering dogs!</h4>
             <div className="input-field col s6">
               <input
                 id="email_inline"
@@ -120,35 +115,11 @@ class SignUpForm extends Component {
             </div>
           </div>
           <div className="row">
-            <p>
-              <label>
-                <input
-                  name="type"
-                  type="radio"
-                  value="fosterAdopter"
-                  checked={this.state.type === "fosterAdopter"}
-                  onChange={this.handleInputChange}
-                  //defaultChecked="false"
-                />
-                <span>Foster / Adopter</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  name="type"
-                  type="radio"
-                  value="agency"
-                  checked={this.state.type === "agency"}
-                  onChange={this.handleInputChange}
-                  //defaultChecked="false"
-                />
-                <span>Agency</span>
-              </label>
-            </p>
-          </div>
-          {this.state.type === "agency" ? <AgencyForm />: <span></span> }
-          {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> }
+
+         </div>
+           <AgencyForm />
+          {/*this.state.type === "agency" ? <AgencyForm />: <span></span> }
+          {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> */}
           <button
             className="btn waves-effect waves-light"
             type="submit"
