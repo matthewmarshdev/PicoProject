@@ -66,8 +66,7 @@ renderDogCards = dogs => {
 
   render() {
     const { visualDogs } = this.state
-    return (
-      <div>
+    return <div>
         <div className="container">
           <div className="row">
             <SplashHeader />
@@ -75,16 +74,18 @@ renderDogCards = dogs => {
               <FadNav click={this.sideClick} componentsUserClick={this.componentsUserClick} componentsSearchClick={this.componentsSearchClick} />
             </div>
             <div className="input-field col s8">
+              <h3>Here's who you can help!</h3>
               {this.state.willRenderSearchBar ? <SearchBar /> : <div />}
               {this.state.willRenderUserSettings ? <FadUserSettings /> : <div />}
               <br />
               <br />
-              { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doggies!</div>}
+              {visualDogs ? this.renderDogCards(visualDogs) : <div>
+                  Loading Doggies!
+                </div>}
             </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
