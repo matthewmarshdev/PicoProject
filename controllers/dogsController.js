@@ -16,6 +16,8 @@ module.exports = {
       .catch(err => res.status(503).json(err));
   },
   findDogById: function (req, res) {
+    // console.log(findDogById)
+    console.log("find Dog by Id working",req.params)
     db.dog
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))

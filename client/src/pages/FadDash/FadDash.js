@@ -11,8 +11,17 @@ class FadDash extends Component {
 state = {
   filteredDogs: [],
   willRenderSearchBar: false,
-  willRenderUserSettings: false
+  willRenderUserSettings: false,
+  breeds: ""
 };
+
+runSearch(searchBreeds) {
+  API.getDogsById(breeds => {
+    this.setState({
+      breeds: breeds
+    })
+  });
+}
 
 componentDidMount() {
   API.getDogs().then(dogs => {
@@ -78,7 +87,7 @@ renderDogCards = dogs => {
               { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div>}
 =======
               <h3>Here's who you can help!</h3>
-              {this.state.willRenderSearchBar ? <SearchBar /> : <div />}
+              {this.state.willRenderSearchBar ? <SearchBar runSearch={this.runSearch.bind(this)}/> : <div />}
               {this.state.willRenderUserSettings ? <FadUserSettings /> : <div />}
               <br />
               <br />
