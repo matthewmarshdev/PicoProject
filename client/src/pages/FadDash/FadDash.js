@@ -83,9 +83,6 @@ renderDogCards = dogs => {
               <FadNav click={this.sideClick} componentsUserClick={this.componentsUserClick} componentsSearchClick={this.componentsSearchClick} />
             </div>
             <div className="input-field col s8">
-<<<<<<< HEAD
-              { visualDogs ? this.renderDogCards(visualDogs) : <div>Loading Doge</div>}
-=======
               <h3>Here's who you can help!</h3>
               {this.state.willRenderSearchBar ? <SearchBar runSearch={this.runSearch.bind(this)}/> : <div />}
               {this.state.willRenderUserSettings ? <FadUserSettings /> : <div />}
@@ -94,7 +91,6 @@ renderDogCards = dogs => {
               {visualDogs ? this.renderDogCards(visualDogs) : <div>
                   Loading Doggies!
                 </div>}
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
             </div>
           </div>
         </div>

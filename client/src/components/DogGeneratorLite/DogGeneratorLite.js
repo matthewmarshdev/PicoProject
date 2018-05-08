@@ -59,103 +59,12 @@ class DogGeneratorLite extends Component {
         <form className="col s8">
           <div className="row">
             <div className="input-field col s6">
-<<<<<<< HEAD
-<<<<<<< HEAD
               <input
-                placeholder="Name"
-=======
-              <input
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
                 id="name"
                 name="name"
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 type="text"
-<<<<<<< HEAD
-                className="validate"
-              />
-            </div>
-            <div className="input-field col s6">
-              <input
-                placeholder="Breed"
-                id="breed"
-                name="breed"
-                value={this.state.breed}
-                onChange={this.handleInputChange}
-                type="text"
-                className="validate"
-              />
-=======
-              <input id="name" name="name" value={this.state.name} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="name">Name</label>
-            </div>
-            <div className="input-field col s6">
-              <input id="breed" name="breed" value={this.state.breed} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="breed">Breed</label>
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
-            </div>
-          </div>
-          <div className="row">
-            <p>
-              <label>
-                <input name="size" value="small" onChange={this.handleInputChange 
-                  } defaultChecked="" type="radio" />
-                <span>Small</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input name="size" value="medium" onChange={this.handleInputChange 
-                  } defaultChecked="" type="radio" />
-                <span>Medium</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input name="size" value="large" onChange={this.handleInputChange
-                  } defaultChecked="" type="radio" />
-                <span>Large</span>
-              </label>
-            </p>
-          </div>
-          <div className="row">
-            <div className="input-field col s4">
-<<<<<<< HEAD
-              <input
-                placeholder="Weight"
-                id="weight"
-                name="weight"
-                value={this.state.weight}
-                onChange={this.handleInputChange}
-                type="text"
-                className="validate"
-              />
-            </div>
-            <div className="input-field col s4">
-              <input
-                placeholder="Sex"
-                id="sex"
-                name="sex"
-                value={this.state.sex}
-                onChange={this.handleInputChange}
-                type="text"
-                className="validate"
-              />
-            </div>
-            <div className="input-field col s4">
-              <input
-                placeholder="Temperament"
-                id="temperment"
-                name="temperment"
-                value={this.state.temperment}
-                onChange={this.handleInputChange}
-                type="text"
-                className="validate"
-              />
-=======
-              <input id="weight" name="weight" value={this.state.weight} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="weight">Weight</label>
-=======
                 placeholder="Name"
                 // className="validate"
               />
@@ -186,7 +95,6 @@ class DogGeneratorLite extends Component {
               />
               <span className="helper-text" data-error="wrong" data-success="right">Sm-Md-Lrg</span>
 
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
             </div>
             <div className="input-field col s3">
               <input
@@ -201,30 +109,6 @@ class DogGeneratorLite extends Component {
                 <span className="helper-text" data-error="wrong" data-success="right">Pounds</span>
 
             </div>
-<<<<<<< HEAD
-            <div className="input-field col s4">
-              <input id="temperment" name="temperment" value={this.state.temperment} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="temperment">Temperment</label>
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
-            </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s8">
-<<<<<<< HEAD
-              <input
-                placeholder="Available Pickup Date"
-                id="pickupDate"
-                name="pickupDate"
-                value={this.state.pickupDate}
-                onChange={this.handleInputChange}
-                type="text"
-                className="validate"
-              />
-=======
-              <input id="pickupDate" name="pickupDate" value={this.state.pickupDate} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="pickupDate">Date Available for Pickup</label>
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
-=======
             <div className="input-field col s3">
               <input
                 id="sex"
@@ -250,7 +134,6 @@ class DogGeneratorLite extends Component {
               />
               <span className="helper-text" data-error="wrong" data-success="right">Personality of Dog</span>
 
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
             </div>
           </div>
           <div className="row">
@@ -291,16 +174,9 @@ class DogGeneratorLite extends Component {
             </div>
           </div>
           <div className="row">
-<<<<<<< HEAD
-            <div className="col s8">
-<<<<<<< HEAD
-              <input
-                placeholder="Story"
-=======
             <div className="col s12">
               <input
                 placeholder="Story of this dog"
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
                 id="story"
                 name="story"
                 value={this.state.story}
@@ -308,19 +184,6 @@ class DogGeneratorLite extends Component {
                 type="text"
                 className="validate"
               />
-<<<<<<< HEAD
-=======
-              <input placeholder="Story" id="story" name="story" value={this.state.story} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="story">Include the Dog's Story Here</label>
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
-            </div>
-          </div>
-          <div className="row">
-            <div className="col s8">
-<<<<<<< HEAD
-              <input
-                placeholder="Image Url"
-=======
             </div>
           </div>
           <div className="row">
@@ -341,25 +204,16 @@ class DogGeneratorLite extends Component {
           <div className="row">
             <div className="col s12">
               <input
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
                 id="image"
                 name="image"
                 value={this.state.image}
                 onChange={this.handleInputChange}
                 type="text"
                 className="validate"
-<<<<<<< HEAD
-              />
-=======
-              <input id="image" name="image" value={this.state.image} onChange={this.handleInputChange} type="text" className="validate" />
-              <label htmlFor="image">Paste Image URL Here</label>
->>>>>>> 27edf2252dd16d6ee8aa77e5f24383de13ca180c
-=======
                 placeholder="JPEG, PNG, JPG"
               />
               <span className="helper-text" data-error="wrong" data-success="right">Upload</span>
 
->>>>>>> e790a885a6089bbcf9d628795dfd06cfd39f65d6
             </div>
           </div>
           <div className="row">
