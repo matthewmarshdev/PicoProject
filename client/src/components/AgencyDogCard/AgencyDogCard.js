@@ -5,8 +5,7 @@ import "./AgencyDogCard.css";
 
 const AgencyDogCard = props => {
   return (
-    <div className="row">
-      <div className="col s12 m7">
+      <div className="col s12 m6">
         <div className="card">
           <div className="card-image">
             <img alt={props.name} src={props.image} />
@@ -28,7 +27,6 @@ const AgencyDogCard = props => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
