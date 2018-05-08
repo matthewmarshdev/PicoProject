@@ -263,7 +263,15 @@ class DogGeneratorLite extends Component {
             name="action"
             onClick={this.handleSubmit}
           >
-            Submit
+            Submit Dog
+          </button>
+          <button
+            className="btn waves-effect waves-light-2"
+            type="submit"
+            name="action"
+            onClick={this.handleSubmit}
+          >
+            Update Dog
           </button>
         </form>
       </div>

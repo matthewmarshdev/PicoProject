@@ -132,7 +132,7 @@ class SignUpForm extends Component {
                 type="text"
                 placeholder="Profit"
               />
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span className="helper-text" data-error="wrong" data-success="right">
                 Is your organization making a profit?
               </span>
             </div>
@@ -147,7 +147,7 @@ class SignUpForm extends Component {
                 type="text"
                 placeholder="Length of time"
               />
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span className="helper-text" data-error="wrong" data-success="right">
                 How long can you keep dogs if no foster is available?
               </span>
             </div>
