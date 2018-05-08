@@ -2,10 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let dogSchema = new Schema({
-  // _id: {
-  //   type: Schema.Types.ObjectId,
-  //   required: true
-  // },
+
   name: {
     type: String
   },
