@@ -8,5 +8,7 @@ router.route("/")
 router.route("/:email")
       .get(userController.findUserByEmail)
 
-
+router.route("/submitLogin")
+      .post(userController.login);
+      
 module.exports = router;

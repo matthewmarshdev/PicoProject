@@ -30,12 +30,12 @@ export default {
   },
 
   updateUserByEmail: function() {
-    return axios.update("/api/user");
+    return axios.update("/api/users");
     // Expects all needed information in the body
     //updateUserById: () => axios.update("/api/user");
-  }
+  },
+  login: userData => {
+   console.log('in the api', userData);
+   return axios.post('/api/users/submitLogin', userData);
+ }
 }
-  //  login: userData => {
-  //  	console.log(userData);
-  //  	return axios.put('/api/user/submitLogin', userData);
-  // }

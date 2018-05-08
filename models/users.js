@@ -2,75 +2,58 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+
   agencyName: {
-    type: Boolean
-  },
-  agencyName: {
-    type: String
+    type: String,
+    default: "no company name"
   },
   username: {
-    type: String
+    type: String,
+    default: "no name"
   },
   password: {
-    type: String
+    type: String,
+    default: "abc123"
   },
   firstName: {
-    type: String
+    type: String,
+    default: "Joe"
   },
   lastName: {
-    type: String
+    type: String,
+    default: "Smith"
   },
   email: {
-    type: String
+    type: String,
+    default: "jsmith@gmail.com"
   },
   phone: {
-    type: Number
+    type: Number,
+    default: 1234567890
   },
-  type: {
-    type: String
-  },
+
   date: {
     type: Date,
     default: Date.now
   },
-  ofage: {
-    type: Boolean
-  },
-  haveowned: {
-    type: Boolean
-  },
-  wheresleep: {
-    type: Boolean
-  },
-  unanimousyes: {
-    type: Boolean
-  },
-  fullavailable: {
-    type: Boolean
-  },
-  aggropets: {
-    type: Boolean
-  },
-  hastallfence: {
-    type: Boolean
-  },
-  aggreeterms: {
-    type: Boolean
-  },
   address1: {
-    type: String
+    type: String,
+      default: "no address provided"
   },
   address2: {
-    type: String
+    type: String,
+      default: "N/A"
   },
   stateprovidence: {
-    type: String
+    type: String,
+      default: "no state provided"
   },
   city: {
-    type: String
+    type: String,
+      default: "no city provided"
   },
   zipcode: {
-    type: Number
+    type: Number,
   }
 });
 

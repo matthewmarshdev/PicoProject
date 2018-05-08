@@ -6,11 +6,18 @@ module.exports = {
     Users
       .create({
         email: req.body.email,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        agency: req.body.agency,
-        phone: req.body.phone
+       password: req.body.password,
+       firstName: req.body.firstName,
+       lastName: req.body.lastName,
+       agencyName: req.body.agency,
+       phone: req.body.phone,
+       profit: req.body.profit,
+       duration: req.body.duration,
+       address1: req.body.address1,
+       address2: req.body.address2,
+       state: req.body.state,
+       city: req.body.city,
+       zip: req.body.zip
       })
       .then(function (userData) {
         res.send("success! It worked");
@@ -21,7 +28,7 @@ module.exports = {
   },
 
   login: function (req, res) {
-    console.log(req.body);
+    console.log('our login stuff on server', req.body);
     Users
       .findOne(req.body, function (user) {
         console.log(user);
@@ -34,11 +41,15 @@ module.exports = {
 
   findUserByEmail: function (req, res) {
     const email = req.params.email;
+    console.log("dis got fired", email);
     Users
       .findOne({ email })
       .then(userData => {
-        const { email, phone, firstName, lastName, agency } = userData;
-        res.json({ email, phone, firstName, lastName, agency });
+        console.log("what is our userData here", userData)
+        const { email, phone, firstName, lastName, agencyName, address1, address2, stateprovidence, city, date } = userData;
+        res.json({ email, phone, firstName, lastName, agencyName, address1, address2, stateprovidence, city, date });
+
+
       })
       .catch(err => res.json(err));
   },
