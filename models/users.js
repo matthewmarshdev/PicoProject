@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  agencyName: {
-    type: Boolean
+  profit: {
+    type: String
   },
   agencyName: {
     type: String
@@ -33,25 +33,25 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  ofage: {
+  ofAge: {
     type: Boolean
   },
-  haveowned: {
+  haveOwned: {
     type: Boolean
   },
-  wheresleep: {
+  duration: {
+    type: String
+  },
+  unanYes: {
     type: Boolean
   },
-  unanimousyes: {
+  fullAvail: {
     type: Boolean
   },
-  fullavailable: {
+  aggroPets: {
     type: Boolean
   },
-  aggropets: {
-    type: Boolean
-  },
-  hastallfence: {
+  hasTallFence: {
     type: Boolean
   },
   aggreeterms: {
@@ -63,13 +63,13 @@ const userSchema = new Schema({
   address2: {
     type: String
   },
-  stateprovidence: {
+  state: {
     type: String
   },
   city: {
     type: String
   },
-  zipcode: {
+  zip: {
     type: Number
   }
 });

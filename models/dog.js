@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let dogSchema = new Schema({
+
   name: {
     type: String
   },

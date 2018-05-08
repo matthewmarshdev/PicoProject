@@ -23,13 +23,22 @@ class FadForm extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
+  unacceptable = e => {
+    const { value } = e.target;
+    e.preventDefault()
+    // alert("You dum")
+    if(value === "false") {
+      alert("Based on your selection, we are sorry we cannot allow you to move forward in the adoption process")
+    }
+  }
+  
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
     // the below api update method doesn't exist yet
-    API.updateUser(this.state)
+    API.updateUserByEmail(this.state)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -44,7 +53,8 @@ class FadForm extends Component {
                 <input
                   name="ofAge"
                   value="true"
-                  //checked={this.state.type === "true"}
+                  required
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
@@ -57,6 +67,7 @@ class FadForm extends Component {
                 <input
                   name="ofAge"
                   value="false"
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -72,7 +83,8 @@ class FadForm extends Component {
                 <input
                   name="haveOwned"
                   value="true"
-                  //checked={this.state.type === "true"}
+                  required
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
@@ -85,6 +97,7 @@ class FadForm extends Component {
                 <input
                   name="haveOwned"
                   value="false"
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -100,7 +113,8 @@ class FadForm extends Component {
                 <input
                   name="unanYes"
                   value="true"
-                  //checked={this.state.type === "true"}
+                  required
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
@@ -113,6 +127,7 @@ class FadForm extends Component {
                 <input
                   name="unanYes"
                   value="false"
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -128,7 +143,8 @@ class FadForm extends Component {
                 <input
                   name="fullAvail"
                   value="true"
-                  //checked={this.state.type === "true"}
+                  required
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
@@ -141,6 +157,7 @@ class FadForm extends Component {
                 <input
                   name="fullAvail"
                   value="false"
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -156,12 +173,13 @@ class FadForm extends Component {
                 <input
                   name="aggroPets"
                   value="true"
-                  //checked={this.state.type === "true"}
+                  required
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
                 />
-                <span>Has aggressive pets</span>
+                <span>Has aggressive pets (true)</span>
               </label>
             </p>
             <p>
@@ -169,12 +187,14 @@ class FadForm extends Component {
                 <input
                   name="aggroPets"
                   value="false"
+                  required
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
                 />
-                <span>Has no aggressive pets</span>
+                <span>Has aggressive pets (false)</span>
               </label>
             </p>
           </div>
@@ -183,7 +203,8 @@ class FadForm extends Component {
               <label>
                 <input
                   name="hasTallFence"
-                  value="tallFence"
+                  value="true"
+                  required
                   //checked={this.state.type === "true"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -196,20 +217,22 @@ class FadForm extends Component {
               <label>
                 <input
                   name="hasTallFence"
-                  value="noTallFence"
-                  //checked={this.state.type === "noTallFence"}
+                  value="false"
+                  onClick={this.unacceptable}
+                  //checked={this.state.type === "false"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
                   type="radio"
                 />
-                <span>Has no tall fence in yard</span>
+                <span>Has a tall fence in yard </span>
               </label>
             </p>
             <p>
               <label>
                 <input
                   name="hasTallFence"
-                  value="noYard"
+                  value="false"
+                  onClick={this.unacceptable}
                   //checked={this.state.type === "noYard"}
                   onChange={this.handleInputChange}
                   defaultChecked=""
@@ -278,13 +301,6 @@ class FadForm extends Component {
               <label htmlFor="zip">Zip</label>
             </div>
           </div>
-          <button
-            className="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-          >
-            Submit
-          </button>
         </form>
       </div>
     );

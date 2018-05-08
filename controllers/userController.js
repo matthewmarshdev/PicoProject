@@ -9,8 +9,15 @@ module.exports = {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        agency: req.body.agency,
-        phone: req.body.phone
+        agencyName: req.body.agency,
+        phone: req.body.phone,
+        profit: req.body.profit,
+        duration: req.body.duration,
+        address1: req.body.address1,
+        address2: req.body.address2,
+        state: req.body.state,
+        city: req.body.city,
+        zip: req.body.zip
       })
       .then(function (userData) {
         res.send("success! It worked");
@@ -43,16 +50,16 @@ module.exports = {
       .catch(err => res.json(err));
   },
 
-  updateUserById: function (req, res) {
+  updateUserByEmail: function (req, res) {
     // Expects updateFields to be exact model names, inside of an object
-    const { id, updateFields } = req.body;
+    const { email, updateFields } = req.body;
     Users
-      .update({ id }, { ...updateFields })
+      .update({ email }, { ...updateFields })
       .then((err, affected, resp) => {
         console.log("What is our response?", resp);
         // check if field was update otherwise throw error
         if (affected === 0)
-          throw new Error("User was not updated properly", id);
+          throw new Error("User was not updated properly", email);
         else res.json(resp);
       })
       .catch(err => res.json(err));

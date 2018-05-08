@@ -6,24 +6,14 @@ class FadNav extends Component {
     return (
       <div className="navBackground">
         <button className="navButton">
-          <i className="material-icons white-text medium">home</i>
-          <br />
-          Home
-        </button>
-        <button className="navButton">
           <i className="material-icons white-text medium">pets</i>
           <br />
           All Dogs
         </button>
-        <button className="navButton">
+        <button className="navButton" onClick={this.props.componentsSearchClick}>
           <i className="material-icons white-text medium">search</i>
           <br />
           Search Dogs
-        </button>
-        <button className="navButton">
-          <i className="material-icons white-text medium">account_circle</i>
-          <br />
-          User Information
         </button>
       </div>
     );

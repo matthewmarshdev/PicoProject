@@ -3,10 +3,11 @@ const userController = require("../../controllers/userController");
 
 router.route("/")
       .post(userController.createUser)
-      //.update(userController.updateUserById);
+      .get(userController.updateUserByEmail);
 
 router.route("/:email")
       .get(userController.findUserByEmail)
 
+//Upate User on FadForm
 
 module.exports = router;
