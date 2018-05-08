@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+// import { Redirect } from 'react-router-dom';
 import "./LoginForm.css";
-import superagent from "superagent";
+import API from '../../utils/API'
+
 import { Redirect } from "react-router-dom";
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props)
+  }
   state = {
     email: "",
     password: "",
@@ -32,17 +37,18 @@ class LoginForm extends Component {
   //am axeing for specific data to be sent here and a special body, I went for it
   handleSubmit = event => {
     event.preventDefault();
-    superagent
-      .post("/api/user")
-      .send({ email: this.state.email, password: this.state.password })
-      .end((err, res) => {
-        if (err) {
-          this.setState({ errorMessage: "Authentication Failed" });
-          return;
-        }
-        localStorage.setItem("token", res.body.token);
-        this.setState();
-      });
+    const { email, password } = this.state;
+    API.login({ email, password }).then(res => {
+      if (res.status === 200) {
+        localStorage.setItem("userEmail", res.body.email);
+        // res.params?.email
+        this.props.history.push("/agencyDash");
+      } else {
+        //we have an error or something
+        console.log("What do")
+      }
+    })
+      .catch(err => console.log("what is our error", err))
   };
 
   render() {
@@ -52,49 +58,51 @@ class LoginForm extends Component {
         {isAlreadyAuthenticated ? (
           <Redirect to={{ pathname: "/faddash" }} />
         ) : (
-          <div className="row formRow">
-            <form className="col s8" onSubmit={this.handleSubmit}>
-              <div className="row">
-                <div className="input-field col s6 offset-s6">
-                  <input
-                    id="email_inline"
-                    type="email"
-                    className="validate"
-                    value={this.state.email}
-                    onChange={this.handleEmailChanged}
-                  />
-                  <label htmlFor="email_inline">Email</label>
-                  <span
-                    className="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                  />
+            <div className="row formRow">
+              <form className="col s8" onSubmit={this.handleSubmit}>
+                <div className="row">
+                  <div className="input-field col s6 offset-s6">
+                    <input
+                      id="email_inline"
+                      type="email"
+                      className="validate"
+                      value={this.state.email}
+                      onChange={this.handleEmailChanged}
+                    />
+                    <label htmlFor="email_inline">Email</label>
+                    <span
+                      className="helper-text"
+                      data-error="wrong"
+                      data-success="right"
+                    />
+                  </div>
+                  <div className="input-field col s6 offset-s6">
+                    <input
+                      id="password"
+                      type="password"
+                      className="validate"
+                      value={this.state.password}
+                      onChange={this.handlePasswordChanged}
+                    />
+                    <label htmlFor="password">Password</label>
+                  </div>
                 </div>
-                <div className="input-field col s6 offset-s6">
-                  <input
-                    id="password"
-                    type="password"
-                    className="validate"
-                    value={this.state.password}
-                    onChange={this.handlePasswordChanged}
-                  />
-                  <label htmlFor="password">Password</label>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col s2 offset-s8">
-                  <button
-                    className="btn waves-effect waves-light offset-s6"
-                    type="submit"
-                    name="action"
-                  >
-                    Submit
+                <div className="row">
+                  <div className="col s2 offset-s8">
+                    <button
+                      className="btn waves-effect waves-light offset-s6"
+                      type="submit"
+                      name="action"
+                    >
+                      Submit
+
+
                   </button>
+                  </div>
                 </div>
-              </div>
-            </form>
-          </div>
-        )}
+              </form>
+            </div>
+          )}
       </div>
     );
   }

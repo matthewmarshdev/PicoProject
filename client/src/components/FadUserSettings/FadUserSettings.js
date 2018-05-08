@@ -11,7 +11,7 @@ class FadUserSettings extends Component {
         password: "",
         firstName: "",
         lastName: "",
-        agency: "",
+        agencyName: "",
         phone: "",
         type: "",
         ofAge: "",

@@ -41,25 +41,27 @@ module.exports = {
 
   findUserByEmail: function (req, res) {
     const email = req.params.email;
+    console.log('Logging out the variable email :', email);
     Users
       .findOne({ email })
       .then(userData => {
-        const { email, phone, firstName, lastName, agency } = userData;
-        res.json({ email, phone, firstName, lastName, agency });
+        const { email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, date } = userData;
+        res.json({ email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, date });
       })
       .catch(err => res.json(err));
   },
 
-  updateUserByEmail: function (req, res) {
+  // Don't know if this is working
+  updateUserById: function (req, res) {
     // Expects updateFields to be exact model names, inside of an object
-    const { email, updateFields } = req.body;
+    const { id, updateFields } = req.body;
     Users
-      .update({ email }, { ...updateFields })
+      .update({ id }, { ...updateFields })
       .then((err, affected, resp) => {
         console.log("What is our response?", resp);
         // check if field was update otherwise throw error
         if (affected === 0)
-          throw new Error("User was not updated properly", email);
+          throw new Error("User was not updated properly", id);
         else res.json(resp);
       })
       .catch(err => res.json(err));
