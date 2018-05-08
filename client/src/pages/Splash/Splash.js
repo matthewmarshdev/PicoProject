@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LgnSgnUpBtn from "../../components/LgnSgnUpBtn";
 import Logo from "../../components/Logo";
 import SplashHeader from "../../components/SplashHeader";
+import AboutBtn from "../../components/AboutBtn";
 
 class Splash extends Component {
   render() {
@@ -10,6 +11,7 @@ class Splash extends Component {
         <SplashHeader />
         <Logo />
         <LgnSgnUpBtn />
+        <AboutBtn />
       </div>
     );
   }

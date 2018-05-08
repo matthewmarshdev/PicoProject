@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./SignUpForm.css";
 import API from "../../utils/API";
+import AgencyForm from "../AgencyForm/AgencyForm";
+import FadForm from "../FadForm/FadForm";
 
 class SignUpForm extends Component {
   state = {
@@ -10,7 +12,14 @@ class SignUpForm extends Component {
     lastName: "",
     agency: "",
     phone: "",
-    type: ""
+    type: "",
+    profit: "",
+    duration: "",
+    address1: "",
+    address2: "",
+    state: "",
+    city: "",
+    zip: ""
   };
 
   handleInputChange = event => {
@@ -33,6 +42,7 @@ class SignUpForm extends Component {
       <div className="row formRow">
         <form className="col s8 offset-s2">
           <div className="row">
+            <h4>Sign Up to start registering dogs!</h4>
             <div className="input-field col s6">
               <input
                 id="email_inline"
@@ -105,33 +115,11 @@ class SignUpForm extends Component {
             </div>
           </div>
           <div className="row">
-            <p>
-              <label>
-                <input
-                  name="type"
-                  type="radio"
-                  value="fosterAdopter"
-                  checked={this.state.type === "fosterAdopter"}
-                  onChange={this.handleInputChange}
-                  //defaultChecked="false"
-                />
-                <span>Foster / Adopter</span>
-              </label>
-            </p>
-            <p>
-              <label>
-                <input
-                  name="type"
-                  type="radio"
-                  value="agency"
-                  checked={this.state.type === "agency"}
-                  onChange={this.handleInputChange}
-                  //defaultChecked="false"
-                />
-                <span>Agency</span>
-              </label>
-            </p>
-          </div>
+
+         </div>
+           <AgencyForm />
+          {/*this.state.type === "agency" ? <AgencyForm />: <span></span> }
+          {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> */}
           <button
             className="btn waves-effect waves-light"
             type="submit"

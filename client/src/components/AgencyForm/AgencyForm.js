@@ -256,14 +256,7 @@ class AgencyForm extends Component {
               <label htmlFor="zip">Zip</label>
             </div>
           </div>
-          <button
-            className="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-            onClick={this.handleSubmit}
-          >
-            Submit
-          </button>
+
         </form>
       </div>
     );

@@ -8,7 +8,7 @@ class AgencyNav extends Component {
   render() {
     return (
       <div className="navBackground">
-        <button className="navButton">
+        <button className="navButton" onClick= {this.props.componentsDogClick}>
           <i className="material-icons white-text medium">edit</i>
           <br />
           Compose Dog
@@ -40,7 +40,7 @@ class AgencyNav extends Component {
           <br />
           Transferred Dogs
         </button>
-        <button className="navButton">
+        <button className="navButton" onClick= {this.props.componentsUserClick}>
           <i className="material-icons white-text medium">account_circle</i>
           <br />
           Agency Information
