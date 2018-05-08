@@ -5,7 +5,7 @@ import "./SplashHeader.css";
 // That way we don't have to define them all individually
 const SplashHeader = () => (
   <nav>
-  <div className='nav-wrapper'>
+  <div className='nav-wrapper green'>
     <h2 className='title'>The Pico Project</h2>
   </div>
   </nav>

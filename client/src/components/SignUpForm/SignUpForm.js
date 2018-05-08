@@ -216,7 +216,7 @@ class SignUpForm extends Component {
           {/*this.state.type === "agency" ? <AgencyForm />: <span></span> }
           {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> */}
           <button
-            className="btn waves-effect waves-light"
+            className="green btn waves-effect waves-light"
             type="submit"
             name="action"
             onClick={this.handleSubmit}

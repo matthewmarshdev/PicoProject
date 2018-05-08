@@ -6,7 +6,7 @@ const AboutBtn = () => (
   <div className="row">
     <div className="col s4 offset-s4">
       <Link to="/about">
-        <a className="waves-effect waves-light btn-large">About</a>
+        <a className="waves-effect green waves-light btn-large">About</a>
       </Link>
     </div>
   </div>

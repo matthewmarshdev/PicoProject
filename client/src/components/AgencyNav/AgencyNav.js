@@ -7,40 +7,40 @@ import "./AgencyNav.css";
 class AgencyNav extends Component {
   render() {
     return (
-      <div className="navBackground">
-        <button className="navButton" onClick= {this.props.componentsDogClick}>
+      <div className="navBackground z-depth-2">
+        <button className="navButton green darken-2" onClick= {this.props.componentsDogClick}>
           <i className="material-icons white-text medium">edit</i>
           <br />
           Compose Dog
         </button>
-        <button onClick={this.props.click} className="navButton">
+        <button onClick={this.props.click} className="navButton green darken-2">
         <div>
           <i className="material-icons white-text medium">pets</i>
           <br />
           All Dogs
           </div>
         </button>
-        <button onClick={this.props.click} className="navButton" value="incomplete">
+        <button onClick={this.props.click} className="navButton green darken-2" value="incomplete">
           <i className="material-icons white-text medium" value="incomplete">report_problem</i>
           <br />
           Incomplete Dogs
         </button>
-        <button onClick={this.props.click} className="navButton" value="complete">
+        <button onClick={this.props.click} className="navButton green darken-2" value="complete">
           <i className="material-icons white-text medium">check_box</i>
           <br />
           Complete Dogs
         </button>
-        <button onClick={this.props.click} className="navButton" value="fostered">
+        <button onClick={this.props.click} className="navButton green darken-2" value="fostered">
           <i className="material-icons white-text medium">mood</i>
           <br />
           Fostered / Adoped Dogs
         </button>
-        <button onClick={this.props.click} className="navButton" value="transferred">
+        <button onClick={this.props.click} className="navButton green darken-2" value="transferred">
           <i className="material-icons white-text medium">swap_horiz</i>
           <br />
           Transferred Dogs
         </button>
-        <button className="navButton" onClick= {this.props.componentsUserClick}>
+        <button className="navButton green darken-2" onClick= {this.props.componentsUserClick}>
           <i className="material-icons white-text medium">account_circle</i>
           <br />
           Agency Information

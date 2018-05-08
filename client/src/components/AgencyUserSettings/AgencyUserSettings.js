@@ -81,7 +81,7 @@ class AgencyUserSettings extends Component {
             </p>
           </div>
           <AgencyForm />
-          <button className="btn waves-effect waves-light" type="submit" name="action" onClick={this.handleSubmit}>
+          <button className="green btn waves-effect waves-light" type="submit" name="action" onClick={this.handleSubmit}>
             Update info
           </button>
         </form>
