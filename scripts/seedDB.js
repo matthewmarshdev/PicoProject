@@ -38,6 +38,7 @@ const dogSeed = [
     weight: "65",
     status: "complete",
     temperment: "Aggressive",
+    pickedDate: Date.new,
     sex: "Male",
     story: "Lorem",
     pickupDate: new Date(Date.now())
@@ -48,23 +49,37 @@ const dogSeed = [
     size: "Large",
     breed: "Alaskian Eskimo",
     weight: "140",
-    status:"fostered",
+    status: "fostered",
     temperment: "Neutral",
+    pickedDate: Date.new,
     sex: "Female",
     story: "Lorem",
     pickupDate: new Date(Date.now())
   },
 
-
   {
     name: "Geraldine",
     size: "Large",
-    breed: "Alaskian Eskimo",
-    weight: "140",
-    status:"transferred",
+    breed: "Chinese Whitehair",
+    weight: "300",
+    status: "transferred",
     temperment: "Neutral",
+    pickedDate: Date.new,
     sex: "Female",
     story: "Lorem",
+    pickupDate: new Date(Date.now())
+  },
+
+  {
+    name: "Clover",
+    size: "Medium",
+    breed: "Husky",
+    weight: "300",
+    status: "completed",
+    pickedDate: Date.new,
+    temperment: "Energetic",
+    sex: "Female",
+    story: "I eat my poop",
     pickupDate: new Date(Date.now())
   }
 ];

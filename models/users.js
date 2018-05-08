@@ -1,110 +1,79 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 const userSchema = new Schema({
-  company: {
-    type: String,
-    required: Boolean,
-    trim: true
+  profit: {
+    type: String
+  },
+  agencyName: {
+    type: String
   },
   username: {
-    type: String,
-    lowercase: true,
-    unique: true,
-    // required: [true, "can't be blank"],
-    trim: true,
-    match: [/^[a-zA-Z0-9]+$/, 'is invalid'], 
-    index: true
-  },
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  email: {
-    type: String,
-    lowercase: true,
-    unique: true,
-    required: true,
-    trim: true
-  },
-  phone: {
-    type: Number,
-    // required: true,
-    trim: true
+    type: String
   },
   password: {
-    type: String,
-    // required: true,
-    trim: true
+    type: String
+  },
+  firstName: {
+    type: String
+  },
+  lastName: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  phone: {
+    type: Number
+  },
+  type: {
+    type: String
   },
   date: {
-    type: Number,
-    date: { dateAdded: Date },
-    // required: true,
-    trim: true
+    type: Date,
+    default: Date.now
   },
-  // ifFoster: {
-    ofage: {
-      type: Boolean,
-      // required: true
-    },
-    haveowned: {
-      type: Boolean,
-      // required: true
-    },
-    wheresleep: {
-      type: Boolean,
-      // required: true
-    },
-    unanimousyes: {
-      type: Boolean,
-      // required: true
-    },
-    fullavailable: {
-      type: Boolean,
-      // required: true
-    },
-    aggropets: {
-      type: Boolean,
-      // required: true
-    },
-    hastallfence: {
-      type: Boolean,
-      // required: true
-    },
-    aggreeterms: {
-      type: Boolean,
-      // required: true
-    },
-    address1: {
-      type: String,
-      // required: true,
-      trim: true
-    },
-    address2: {
-      type: String,
-      // required: false,
-      trim: true
-    },
-    stateprovidence: {
-      type: String,
-      // required: true,
-      trim: true
-    },
-    city: {
-      type: String,
-      // required: true,
-      trim: true
-    },
-    zipcode: {
-      type: Number,
-      // required: true,
-      trim: true
-    }
-  });
+  ofAge: {
+    type: Boolean
+  },
+  haveOwned: {
+    type: Boolean
+  },
+  duration: {
+    type: String
+  },
+  unanYes: {
+    type: Boolean
+  },
+  fullAvail: {
+    type: Boolean
+  },
+  aggroPets: {
+    type: Boolean
+  },
+  hasTallFence: {
+    type: Boolean
+  },
+  aggreeterms: {
+    type: Boolean
+  },
+  address1: {
+    type: String
+  },
+  address2: {
+    type: String
+  },
+  state: {
+    type: String
+  },
+  city: {
+    type: String
+  },
+  zip: {
+    type: Number
+  }
+});
 
-const users = mongoose.model("users", userSchema);
+const users = mongoose.model("user", userSchema);
 
 module.exports = users;

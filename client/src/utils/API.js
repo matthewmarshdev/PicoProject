@@ -1,17 +1,45 @@
 import axios from "axios";
 
-//calls to server saved in one place, take as needed for compnents
-
 export default {
+  addDog: function (userData) {
+    return axios.post("/api/dogs", userData);
+  },
+  getDogs: function () {
+    return axios.get('/api/dogs')
+    //  getDogs: () => return axios.get('/api/dogs'),
+  },
+  getDogsById: function (id) {
+    return axios.get('/api/dogs/' + id)
+    // getDogById: id => axios.get('/api/dogs/' + id),
+  },
 
- addDog: function(userData) {
-   return axios.post("/api/adddog", userData);
- },
- saveUser: function(userData) {
-   return axios.post("/api/user", userData);
- },
- getDogs: () => {
-   return axios.get('/api/getdogs');
- }
+  updateDogbyId: function (id) {
+    return axios.put('/api/dogs/' + id)
+    // updateDogById: id => axios.put('/api/dogs/' + id),
+  },
+  // Don
+  saveUser: function (userData) {
+    // console.log(userData);
+    return axios.post("/api/users", userData);
+  },
 
-};
+  getUserByEmail: function (userEmail) {
+    return axios.get("/api/users/" + userEmail);
+    // Has no body gets reference to the user off of the email
+    // getUserByEmail: userEmail => axios.get("/api/user/" + userEmail),
+  },
+
+  updateUserByEmail: function() {
+    return axios.put("/api/user");
+    // Expects all needed information in the body
+    //updateUserById: () => axios.update("/api/user");
+  },
+  // FAD Form
+  updateUser: function() {
+    return axios.put('/api/users/');
+  }
+}
+  //  login: userData => {
+  //  	console.log(userData);
+  //  	return axios.put('/api/user/submitLogin', userData);
+  // }

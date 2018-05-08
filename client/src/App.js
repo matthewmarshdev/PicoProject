@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import AgencyDash from "./pages/AgencyDash";
 import FadDash from "./pages/FadDash";
+import About from "./pages/About"
 import NoMatch from "./pages/NoMatch";
 import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/agencydash" component={AgencyDash} />
         <Route exact path="/faddash" component={FadDash} />
+        <Route exact path="/about" component={About} />
         <Route component={NoMatch} />
       </Switch>
     </div>

@@ -2,48 +2,48 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let dogSchema = new Schema({
+
   name: {
+    type: String
+  },
+  image: {
     type: String
   },
   size: {
     type: String
   },
   breed: {
-    type: String,
+    type: String
   },
   weight: {
-    type: Number,
-    minimum: 5
+    type: String
   },
   temperment: {
-    type: String,
-    required: false
+    type: String
   },
   sex: {
-    type: String,
-    required: true
+    type: String
   },
   pickupDate: {
     type: Date,
     default: Date.now
   },
+  status: {
+    type: String
+  },
   isChopped: {
-    type: Boolean,
-    required: true
+    type: Boolean
   },
   isChipped: {
-    type: Boolean,
-    required: false
+    type: Boolean
   },
   hasVacc: {
-    type: Boolean,
-    required: true
+    type: Boolean
   },
   story: {
-    type: String,
-    required: true
+    type: String
   }
 });
-const Dog = mongoose.model("Dog", dogSchema);
+const dog = mongoose.model("dog", dogSchema);
 
-module.exports = Dog;
+module.exports = dog; 

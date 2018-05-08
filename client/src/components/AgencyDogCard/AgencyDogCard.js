@@ -1,13 +1,15 @@
 import React from "react";
 import "./AgencyDogCard.css";
+
+
 // import API from "../../utils/API";
 
 const AgencyDogCard = props => {
   return (
-    <div className="col s8">
+    <div className="col s8" onClick={props.onClick}>
       <span className="cardElement">{props.name}</span>
       <br />
-      <img alt="dog" src={props.img} />
+      <img alt="dog" src="{props.img}" />
       <br />
       <span className="cardElement">Sex: {props.sex} </span>
       <span className="cardElement">Age: {props.age}</span>
@@ -22,6 +24,8 @@ const AgencyDogCard = props => {
       <span className="cardElement">Chipped: {props.isChipped} </span>
       <span className="cardElement">Vaccinated: {props.hasVacc}</span>
       <br />
+       {/* here, status has been added as a card element */}
+      <span className="cardElement">Status: {props.status}</span>
       <span className="cardElement">Story: {props.story}</span>
     </div>
   );
