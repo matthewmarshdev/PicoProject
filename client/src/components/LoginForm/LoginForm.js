@@ -5,8 +5,7 @@ import { Redirect } from "react-router-dom";
 class LoginForm extends Component {
   state = {
     email: "",
-    password: "",
-    authenticated: false
+    password: ""
   };
 
   handleEmailChanged = event => {
@@ -29,12 +28,8 @@ class LoginForm extends Component {
   };
 
   render() {
-    const isAlreadyAuthenticated = this.isAuthenticated();
     return (
       <div>
-        {isAlreadyAuthenticated ? (
-          <Redirect to={{ pathname: "/faddash" }} />
-        ) : (
           <div className="row formRow">
             <form className="col s8" onSubmit={this.handleSubmit}>
               <div className="row">
