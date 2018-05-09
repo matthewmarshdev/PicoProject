@@ -223,7 +223,7 @@ class AgencyUserSettings extends Component {
             </div>
           </div>
           <button
-            className="btn waves-effect waves-light"
+            className="green btn waves-effect waves-light"
             type="submit"
             name="action"
             onClick={this.handleSubmit}

@@ -91,7 +91,7 @@ class LoginForm extends Component {
               <div className="row">
                 <div className="col s2 offset-s8">
                   <button
-                    className="btn waves-effect waves-light offset-s6"
+                    className="green btn waves-effect waves-light offset-s6"
                     type="submit"
                     name="action"
                   >

@@ -11,7 +11,6 @@ class Splash extends Component {
         <SplashHeader />
         <Logo />
         <LgnSgnUpBtn />
-        <AboutBtn />
       </div>
     );
   }

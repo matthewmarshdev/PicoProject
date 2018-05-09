@@ -258,7 +258,7 @@ class DogGeneratorLite extends Component {
             </p>
           </div>
           <button
-            className="btn waves-effect waves-light"
+            className="green btn waves-effect waves-light"
             type="submit"
             name="action"
             onClick={this.handleSubmit}
@@ -266,7 +266,7 @@ class DogGeneratorLite extends Component {
             Submit Dog
           </button>
           <button
-            className="btn waves-effect waves-light-2"
+            className="green btn waves-effect waves-light-2"
             type="submit"
             name="action"
             onClick={this.handleSubmit}

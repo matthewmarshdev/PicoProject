@@ -8,19 +8,25 @@ class DogCard extends Component {
 
   render() {
     return (
-      <div className="col s8">
-        <span className="cardElement">{this.props.name}</span><br />
-        <img alt="dog" src={this.props.img} /><br />
-        <span className="cardElement">Sex: {this.props.sex} </span>
-        <span className="cardElement">Age: {this.props.age}</span><br />
-        <span className="cardElement">Breed: {this.props.breed} </span>
-        <span className="cardElement">Size: {this.props.size}</span><br />
-        <span className="cardElement">Weight: {this.props.weight} </span>
-        <span className="cardElement">Temperment: {this.props.temperment}</span><br />
-        <span className="cardElement">Neutered: {this.props.isChopped} </span>
-        <span className="cardElement">Chipped: {this.props.isChipped} </span>
-        <span className="cardElement">Vaccinated: {this.props.hasVacc}</span><br />
-        <span className="cardElement">Story: {this.props.story}</span>
+      <div className="col m6 s12">
+        <div className="card">
+          <div className="card-image">
+            <img alt={this.props.name} src={this.props.image} />
+            <span className="card-title">{this.props.name}</span>
+          </div>
+          <div className="card-content">
+            <p>Sex: {this.props.sex} </p>
+            <p>Age: {this.props.age}</p>
+            <p>Breed: {this.props.breed} </p>
+            <p>Size: {this.props.size}</p>
+            <p>Weight: {this.props.weight} </p>
+            <p>Temperment: {this.props.temperment}</p>
+            <p>Neutered: {this.props.isChopped} </p>
+            <p>Chipped: {this.props.isChipped} </p>
+            <p>Vaccinated: {this.props.hasVacc}</p>
+            <p>Story: {this.props.story}</p>
+          </div>
+        </div>
       </div>
     );
   }
