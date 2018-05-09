@@ -9,7 +9,7 @@ import SearchBar from "../../components/SearchBar"
 class FadDash extends Component {
 
 state = {
-  filteredDogs: [],
+  visualDogs: [],
   willRenderSearchBar: false,
   willRenderUserSettings: false,
   breeds: ""
