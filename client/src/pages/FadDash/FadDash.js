@@ -67,6 +67,7 @@ renderDogCards = dogs => {
       weight={dog.weight}
       temperment={dog.temperment}
       breed={dog.breed}
+      image={dog.image}
       story={dog.story}
       status={dog.status}
     />
