@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LoginForm.css";
-import { Redirect } from "react-router-dom";
+//import { Redirect } from "react-router-dom";
 
 class LoginForm extends Component {
   state = {
@@ -20,9 +20,6 @@ class LoginForm extends Component {
     });
   };
 
-  //not sure where to send info to get authorization
-  //I am using superagent to make a POST here, which I know is out of scope, but since I
-  //am axeing for specific data to be sent here and a special body, I went for it
   handleSubmit = event => {
     event.preventDefault();
   };
