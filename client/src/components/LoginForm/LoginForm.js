@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+// import { Redirect } from 'react-router-dom';
 import "./LoginForm.css";
-import superagent from "superagent";
+import API from "../../utils/API";
+
 import { Redirect } from "react-router-dom";
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     email: "",
     password: "",
@@ -32,17 +37,19 @@ class LoginForm extends Component {
   //am axeing for specific data to be sent here and a special body, I went for it
   handleSubmit = event => {
     event.preventDefault();
-    superagent
-      .post("/api/user")
-      .send({ email: this.state.email, password: this.state.password })
-      .end((err, res) => {
-        if (err) {
-          this.setState({ errorMessage: "Authentication Failed" });
-          return;
+    const { email, password } = this.state;
+    API.login({ email, password })
+      .then(res => {
+        if (res.status === 200) {
+          localStorage.setItem("userEmail", res.data.email);
+          // res.params?.email
+          this.props.history.push("/agencyDash");
+        } else {
+          //we have an error or something
+          console.log("What do");
         }
-        localStorage.setItem("token", res.body.token);
-        this.setState();
-      });
+      })
+      .catch(err => console.log("what is our error", err));
   };
 
   render() {
@@ -84,7 +91,7 @@ class LoginForm extends Component {
               <div className="row">
                 <div className="col s2 offset-s8">
                   <button
-                    className="btn waves-effect waves-light offset-s6"
+                    className="green btn waves-effect waves-light offset-s6"
                     type="submit"
                     name="action"
                   >

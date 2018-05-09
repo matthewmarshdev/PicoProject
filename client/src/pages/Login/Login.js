@@ -11,7 +11,7 @@ class Login extends Component {
       <div className="container">
         <SplashHeader />
         <Logo />
-        <LoginForm />
+        <LoginForm history={this.props.history}/>
         
       </div>
     );

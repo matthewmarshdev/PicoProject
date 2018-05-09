@@ -4,13 +4,13 @@ import "./FadNav.css";
 class FadNav extends Component {
   render() {
     return (
-      <div className="navBackground">
-        <button className="navButton">
+      <div className="navBackground z-depth-2">
+        <button className="navButton green darken-2">
           <i className="material-icons white-text medium">pets</i>
           <br />
           All Dogs
         </button>
-        <button className="navButton" onClick={this.props.componentsSearchClick}>
+        <button className="navButton green darken-2" onClick={this.props.componentsSearchClick}>
           <i className="material-icons white-text medium">search</i>
           <br />
           Search Dogs

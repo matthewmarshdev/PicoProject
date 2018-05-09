@@ -9,7 +9,7 @@ import SearchBar from "../../components/SearchBar"
 class FadDash extends Component {
 
 state = {
-  filteredDogs: [],
+  visualDogs: [],
   willRenderSearchBar: false,
   willRenderUserSettings: false,
   breeds: ""
@@ -67,6 +67,7 @@ renderDogCards = dogs => {
       weight={dog.weight}
       temperment={dog.temperment}
       breed={dog.breed}
+      image={dog.image}
       story={dog.story}
       status={dog.status}
     />
@@ -84,7 +85,7 @@ renderDogCards = dogs => {
             </div>
             <div className="input-field col s8">
               <h3>Here's who you can help!</h3>
-              {this.state.willRenderSearchBar ? <SearchBar runSearch={this.runSearch.bind(this)}/> : <div />}
+              {this.state.willRenderSearchBar ? <SearchBar placeholder="Search by Breed" runSearch={this.runSearch.bind(this)}/> : <div />}
               {this.state.willRenderUserSettings ? <FadUserSettings /> : <div />}
               <br />
               <br />

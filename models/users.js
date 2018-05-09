@@ -6,28 +6,33 @@ const userSchema = new Schema({
     type: String
   },
   agencyName: {
-    type: String
+    type: String,
+    default: "no company name"
   },
   username: {
-    type: String
+    type: String,
+    default: "no name"
   },
   password: {
-    type: String
+    type: String,
+    default: "abc123"
   },
   firstName: {
-    type: String
+    type: String,
+    default: "Joe"
   },
   lastName: {
-    type: String
+    type: String,
+    default: "Smith"
   },
   email: {
-    type: String
+    type: String,
+    default: "joe@gmail.com"
+
   },
   phone: {
-    type: Number
-  },
-  type: {
-    type: String
+    type: Number,
+    default: "30350195102951"
   },
   date: {
     type: Date,
@@ -40,7 +45,8 @@ const userSchema = new Schema({
     type: Boolean
   },
   duration: {
-    type: String
+    type: String,
+    default: "150 days"
   },
   unanYes: {
     type: Boolean
@@ -58,19 +64,23 @@ const userSchema = new Schema({
     type: Boolean
   },
   address1: {
-    type: String
+    type: String,
+    default: "3570 S Las Vegas Blvd"
   },
   address2: {
     type: String
   },
   state: {
-    type: String
+    type: String,
+    default: "Nevada"
   },
   city: {
-    type: String
+    type: String,
+    default: "Las Vegas"
   },
   zip: {
-    type: Number
+    type: Number,
+    default: "88901"
   }
 });
 
