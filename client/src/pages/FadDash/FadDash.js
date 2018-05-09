@@ -84,7 +84,7 @@ renderDogCards = dogs => {
             </div>
             <div className="input-field col s8">
               <h3>Here's who you can help!</h3>
-              {this.state.willRenderSearchBar ? <SearchBar runSearch={this.runSearch.bind(this)}/> : <div />}
+              {this.state.willRenderSearchBar ? <SearchBar placeholder="Search by Breed" runSearch={this.runSearch.bind(this)}/> : <div />}
               {this.state.willRenderUserSettings ? <FadUserSettings /> : <div />}
               <br />
               <br />

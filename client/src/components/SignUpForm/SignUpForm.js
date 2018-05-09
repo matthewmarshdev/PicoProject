@@ -48,7 +48,7 @@ class SignUpForm extends Component {
   render() {
     return (
       <div className="row formRow">
-        <form className="col s8">
+        <form className="col s8 offset-s2">
           <div className="row">
             <h4>Sign Up to start registering dogs!</h4>
             <div className="input-field col s6">
@@ -216,7 +216,7 @@ class SignUpForm extends Component {
           {/*this.state.type === "agency" ? <AgencyForm />: <span></span> }
           {this.state.type === "fosterAdopter" ? <FadForm />: <span></span> */}
           <button
-            className="btn waves-effect waves-light"
+            className="green btn waves-effect waves-light"
             type="submit"
             name="action"
             onClick={this.handleSubmit}
