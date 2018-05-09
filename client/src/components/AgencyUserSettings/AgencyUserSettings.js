@@ -52,7 +52,7 @@ class AgencyUserSettings extends Component {
       <div className="row formRow">
         <form className="col s8">
           <div className="row">
-            <h4>Sign Up to start registering dogs!</h4>
+            <h4>User Info</h4>
             <div className="input-field col s6">
               <input
                 id="email_inline"
