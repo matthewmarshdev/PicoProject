@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./LoginForm.css";
-import superagent from "superagent";
 import { Redirect } from "react-router-dom";
 
 class LoginForm extends Component {
@@ -8,11 +7,6 @@ class LoginForm extends Component {
     email: "",
     password: "",
     authenticated: false
-  };
-
-  isAuthenticated = () => {
-    const token = localStorage.getItem("token");
-    return token && token.length > 10;
   };
 
   handleEmailChanged = event => {
@@ -32,17 +26,6 @@ class LoginForm extends Component {
   //am axeing for specific data to be sent here and a special body, I went for it
   handleSubmit = event => {
     event.preventDefault();
-    superagent
-      .post("/api/user")
-      .send({ email: this.state.email, password: this.state.password })
-      .end((err, res) => {
-        if (err) {
-          this.setState({ errorMessage: "Authentication Failed" });
-          return;
-        }
-        localStorage.setItem("token", res.body.token);
-        this.setState();
-      });
   };
 
   render() {
