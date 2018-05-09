@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 // import { Redirect } from 'react-router-dom';
 import "./LoginForm.css";
-import API from '../../utils/API'
+import API from "../../utils/API";
 
 import { Redirect } from "react-router-dom";
 
 class LoginForm extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   state = {
     email: "",
@@ -38,17 +38,18 @@ class LoginForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
-    API.login({ email, password }).then(res => {
-      if (res.status === 200) {
-        localStorage.setItem("userEmail", res.body.email);
-        // res.params?.email
-        this.props.history.push("/agencyDash");
-      } else {
-        //we have an error or something
-        console.log("What do")
-      }
-    })
-      .catch(err => console.log("what is our error", err))
+    API.login({ email, password })
+      .then(res => {
+        if (res.status === 200) {
+          localStorage.setItem("userEmail", res.data.email);
+          // res.params?.email
+          this.props.history.push("/agencyDash");
+        } else {
+          //we have an error or something
+          console.log("What do");
+        }
+      })
+      .catch(err => console.log("what is our error", err));
   };
 
   render() {
@@ -58,51 +59,49 @@ class LoginForm extends Component {
         {isAlreadyAuthenticated ? (
           <Redirect to={{ pathname: "/faddash" }} />
         ) : (
-            <div className="row formRow">
-              <form className="col s8" onSubmit={this.handleSubmit}>
-                <div className="row">
-                  <div className="input-field col s6 offset-s6">
-                    <input
-                      id="email_inline"
-                      type="email"
-                      className="validate"
-                      value={this.state.email}
-                      onChange={this.handleEmailChanged}
-                    />
-                    <label htmlFor="email_inline">Email</label>
-                    <span
-                      className="helper-text"
-                      data-error="wrong"
-                      data-success="right"
-                    />
-                  </div>
-                  <div className="input-field col s6 offset-s6">
-                    <input
-                      id="password"
-                      type="password"
-                      className="validate"
-                      value={this.state.password}
-                      onChange={this.handlePasswordChanged}
-                    />
-                    <label htmlFor="password">Password</label>
-                  </div>
+          <div className="row formRow">
+            <form className="col s8" onSubmit={this.handleSubmit}>
+              <div className="row">
+                <div className="input-field col s6 offset-s6">
+                  <input
+                    id="email_inline"
+                    type="email"
+                    className="validate"
+                    value={this.state.email}
+                    onChange={this.handleEmailChanged}
+                  />
+                  <label htmlFor="email_inline">Email</label>
+                  <span
+                    className="helper-text"
+                    data-error="wrong"
+                    data-success="right"
+                  />
                 </div>
-                <div className="row">
-                  <div className="col s2 offset-s8">
-                    <button
-                      className="btn waves-effect waves-light offset-s6"
-                      type="submit"
-                      name="action"
-                    >
-                      Submit
-
-
+                <div className="input-field col s6 offset-s6">
+                  <input
+                    id="password"
+                    type="password"
+                    className="validate"
+                    value={this.state.password}
+                    onChange={this.handlePasswordChanged}
+                  />
+                  <label htmlFor="password">Password</label>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col s2 offset-s8">
+                  <button
+                    className="btn waves-effect waves-light offset-s6"
+                    type="submit"
+                    name="action"
+                  >
+                    Submit
                   </button>
-                  </div>
                 </div>
-              </form>
-            </div>
-          )}
+              </div>
+            </form>
+          </div>
+        )}
       </div>
     );
   }

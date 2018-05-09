@@ -20,7 +20,7 @@ class DogGeneratorLite extends Component {
   };
 
   componentWillReceiveProps = nextProps => {
-    console.log("props are here?", nextProps.dog);
+    console.log("props are here?", nextProps);
     this.setState({
       ...nextProps.dog
     });

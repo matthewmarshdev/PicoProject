@@ -9,7 +9,7 @@ module.exports = {
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        agencyName: req.body.agency,
+        agencyName: req.body.agencyName,
         phone: req.body.phone,
         profit: req.body.profit,
         duration: req.body.duration,
@@ -45,8 +45,8 @@ module.exports = {
     Users
       .findOne({ email })
       .then(userData => {
-        const { email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, date } = userData;
-        res.json({ email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, date });
+        const { email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, duration,} = userData;
+        res.json({ email, phone, firstName, lastName, agencyName, address1, address2, state, city, zip, duration, profit });
       })
       .catch(err => res.json(err));
   },

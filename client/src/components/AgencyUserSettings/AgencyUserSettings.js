@@ -3,15 +3,13 @@ import "./AgencyUserSettings.css";
 // import AgencyForm from "../AgencyForm";
 import API from "../../utils/API";
 
-
-
 class AgencyUserSettings extends Component {
   state = {
     email: "",
     password: "",
     firstName: "",
     lastName: "",
-    agency: "",
+    agencyName: "",
     phone: "",
     profit: "",
     duration: "",
@@ -20,19 +18,17 @@ class AgencyUserSettings extends Component {
     state: "",
     city: "",
     zip: ""
-  }
-
+  };
 
   componentDidMount() {
-
     //this is pseudo code localstora
     const email = localStorage.getItem("userEmail");
     API.getUserByEmail(email).then(user => {
-      console.log('what is our user now??', user);
+      console.log("what is our user now??", user);
       this.setState({
         ...user.data
-      })
-    })
+      });
+    });
   }
 
   handleInputChange = event => {
@@ -51,7 +47,7 @@ class AgencyUserSettings extends Component {
   };
 
   render() {
-    console.log("info is loaded", this.state)
+    console.log("info is loaded", this.state);
     return (
       <div className="row formRow">
         <form className="col s8">
@@ -107,12 +103,13 @@ class AgencyUserSettings extends Component {
           <div className="row">
             <div className="input-field col s6">
               <input
-                id="agency"
-                name="agency"
+                id="agencyName"
+                name="agencyName"
                 type="text"
                 className="validate"
-                value={this.state.agency}
+                value={this.state.agencyName}
                 onChange={this.handleInputChange}
+                required="required"
               />
               <label htmlFor="agency">Agency Name (optional)</label>
             </div>
@@ -138,9 +135,13 @@ class AgencyUserSettings extends Component {
                 type="text"
                 placeholder="Profit"
               />
-              <span className="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 Is your organization making a profit?
-                  </span>
+              </span>
             </div>
           </div>
           <div className="row">
@@ -153,9 +154,13 @@ class AgencyUserSettings extends Component {
                 type="text"
                 placeholder="Length of time"
               />
-              <span className="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 How long can you keep dogs if no foster is available?
-                  </span>
+              </span>
             </div>
           </div>
           <div className="row">
@@ -224,10 +229,10 @@ class AgencyUserSettings extends Component {
             onClick={this.handleSubmit}
           >
             Submit
-              </button>
+          </button>
         </form>
       </div>
-    )
+    );
   }
 }
 
