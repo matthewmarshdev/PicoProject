@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./SignUpForm.css";
 import API from "../../utils/API";
+import { Link } from "react-router-dom"
 // import AgencyForm from "../AgencyForm/AgencyForm";
 // import FadForm from "../FadForm/FadForm";
 
@@ -32,7 +33,7 @@ class SignUpForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     API.saveUser(this.state)
-      .then(res => console.log(res))
+      .then(res => window.location="/login")
       .catch(err => console.log(err));
   };
 
@@ -222,6 +223,7 @@ class SignUpForm extends Component {
             onClick={this.handleSubmit}
           >
             Submit
+            
           </button>
         </form>
       </div>
